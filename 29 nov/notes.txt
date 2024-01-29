@@ -1,0 +1,54 @@
+Introduction to HTML:
+
+HyperText Mark Up Language -> To create static web pages.
+
+Mark Up Language: 
+It is a tag based Language where the representation of data / UI is provided with tags. 
+A tag is a keyword which is enclosed in  angular brackets(< and >) symbols. 
+ex: <html>,<head>, <body>, <digital-lync>,<lync>, <java>.....
+
+Tags have attributes that extend the capability of a tag. 
+ex:  <input type="password">
+HTML is a collection of tags. 
+
+Basic HTML Page: 
+<html>
+    <head>
+         <title>Digital Lync</title>
+           <link rel="icon" type="image/png" href="favicon.png">
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+     </body>
+</html>
+
+How Browser is executing HTML Web Pages: 
+* Browser reads the complete HTML File and cross check whether the format of HTML is correct or not. 
+If the format is incorrect, The Browser autocorrects the format. 
+* Browser converts the HTML Document in to DOM ( Document Object Model) Tree.  Each element will be considered 
+as an object. 
+* Render Engine uses DOM and update the UI. 
+* Using JS, we interact with DOM and then update the DOM for dynamic web page. 
+
+HTML Parsing:
+The browser begins to parse the HTML document. Parsing involves breaking down the HTML code into a Document Object Model (DOM), a hierarchical tree-like structure that represents the document's structure.
+
+DOM Construction:
+The browser constructs the DOM by creating a tree of elements, attributes, and text content according to the structure defined in the HTML.
+
+CSS Parsing and Rendering:
+If there are linked or embedded stylesheets, the browser parses them to understand how to style the HTML elements. It then applies the styles to the corresponding elements, a process known as rendering.
+
+JavaScript Execution:
+If there is JavaScript code in the HTML (either inline or linked externally), the browser executes it. JavaScript can manipulate the DOM, make additional requests to the server, and modify the page dynamically.
+
+Rendering:
+The browser combines the HTML content, styles, and JavaScript-generated content to create the final rendered page. The rendered page is displayed in the browser window.
+
+Rendering Updates:
+As users interact with the page or as new data arrives, the browser may need to re-render parts of the page. This process can be triggered by user actions, asynchronous JavaScript requests, or other events.
+
+User Interaction:
+The user can interact with the page through clicks, form submissions, and other actions. The browser handles these events, and if necessary, it triggers further requests to the server or updates the DOM dynamically.
+   
+ 

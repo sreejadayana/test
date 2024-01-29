@@ -1,0 +1,28 @@
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="username" placeholder="enter username">
+         <input type="text" id="password" placeholder="enter password">
+         <button onclick="login()">Login</button>
+ 
+           <script>
+              
+                    function login(){
+                       var username= document.getElementById("username").value;
+                       var password = document.getElementById("password").value;
+                      var result = auth(username,password);
+                      result ? alert("Login success"): alert("login failure");
+                    }
+                    function auth(username, password){
+                         if(username == "abc" && password == "abc"){
+                            return true;
+                         }
+                         else{
+                            return false;
+                         }
+                    }
+        
+           </script>
+     </body>
+</html>

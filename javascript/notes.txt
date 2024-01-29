@@ -1,0 +1,2594 @@
+JavaScript:
+
+JavaScript is a scripting language which can be used to develop dynamic front end web pages and also 
+write server side applications.
+
+Brendan developed JavaScript while working with Netscape company on a project (Netscape Navigator).
+
+Initally JS was called as LiveScript, then later changed the name to JavaScript. 
+
+ECMA (European Computers Manufacturers Association) standardized Javascript so JS can also be called as 
+ECMAScript (ES5,ES6,ES7).
+
+Variables: 
+Variables are identifiers to store / refer / identify some data / values. 
+
+syntax: 
+ var var_name = value; 
+ var age = 21; 
+ var username ="kiran123" 
+ var password= "djfvldfnvldnfv" 
+ var mobile = 9010101010
+
+Note: As a developer, if we want to know how far our logic is working, we can console log the intermediate 
+results. 
+
+console.log();
+  var name="digital lync"; 
+               var address= "Hitech City, Opp to Cyber Towers!";
+               console.log(name);
+               console.log(address);
+
+There are two types of variables.
+
+1. Local Variables : A variable that is enclosed in a function is known as local variable. 
+Local variables can be accessed only with in the function. 
+
+function login(){
+                    var username= "dl";  // Local variable
+                    var password= "lync"; // Local Variable
+                    console.log(username); 
+                    console.log(password);
+                  }
+                  login();
+                  console.log(username); // error
+
+2. Global Variables: 
+Any variable that is created outside of a function, then it is considered as global variable. 
+
+                   var x=100; //global variable 
+                   var y=200; // global variable. 
+                   function f1(){
+                       console.log(x);  // 100
+                       console.log(y); // 200
+                       x=900;
+                   }
+                    console.log(x); // 100
+                   f1();
+                   console.log(x); // 900
+                   
+Local and Global example: 
+
+var a;//variable declaration
+a=100;//intilization
+var b=200;//variable definition
+var x;//undefined
+console.log(x);//
+
+var x=100;
+                   function f1(){
+                    var x=2;
+                       console.log(x);  // 2
+                       x=9; //
+                   }
+                    console.log(x); // 100
+                   f1();
+                   console.log(x); // 100
+
+Problem Statement: 
+Implement likes feature of facebook.
+
+Algorithm: 
+1. Get the like icon
+2. make the icon clickable 
+3. create a variable and initialize the value to 0. 
+4. Based on the click, increment the variable's value by 1. 
+5. Display the incremented value on the UI. 
+
+:in instragraem we search thumsup like button
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+     <body>
+          
+        <i onclick="likes()" class="fa fa-thumbs-up" style="font-size:48px;color:grey"></i> <span id="counter" style="font-size: 40px;">0</span>
+        <script>
+             var likesCount = 0; 
+                  function likes(){
+                    likesCount  = likesCount + 1; 
+                    document.getElementById("counter").innerText = likesCount;
+                  }
+        </script>
+     </body>
+</html>
+
+Variable Hoisting: 
+It is the process where the global variables and local variables are hoisted before 
+the execution. 
+All the global and local variables (in function) are declared to the top before the 
+execution of the code. 
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+     <body>
+        <script>
+                       var a=100;
+                      function f1(){
+                            console.log(a);  // 100  (variable hosting)
+                            a=9;
+                            var a=80;
+                            console.log(a); //80
+                      }
+                      f1();
+                      console.log(a); //  100 
+                      var x=90; 
+                    
+                       ex: //   var a,x;  // undefined,undefined
+                        //   a=100;
+                        //   function f1(){
+                        //     var a; // undefined
+                        //     console.log(a);  //  undefined
+                        //     a=9;
+                        //     a=80;
+                        //   }
+                        //   f1();
+                        //   console.log(a);  // 100 
+                        //   x=90
+        </script>
+     </body>
+</html>
+
+-------------------------------------------------------------------------------------------
+
+Data types: 
+JS is developed as weakly typed language.
+
+ var isDone = false; 
+                    isDone = "HELLO"; 
+                    console.log(typeof isDone);
+---------------------------------------------------------------------
+var var_name = value; 
+var a=100; // number
+var a= "hello"; // string
+
+We can categorize datatypes into 2 types. 
+
+1. Primitive Types :  number, boolean, string
+
+1. number: represents a number eg:100
+
+                      var age = 21; 
+                      console.log(typeof age);
+                      var rating = 4.123; 
+                      console.log(typeof rating);
+                      var mobile = 9010101010; 
+                      console.log(typeof mobile);
+                       if(typeof mobile == "number"){
+                                console.log("processing..")
+                       }
+                       else{
+                               console.log("incorrect format");
+                       }
+
+2.boolean:  rep a boolean either true are flase
+
+                       var isDone = true; 
+                       var isUserLoggedIn = false; 
+                       console.log(typeof isDone);
+                       console.log(typeof isUserLoggedIn);
+                       var isFinished = 1; 
+                       console.log(typeof isFinished); // 
+   
+                       var isUserLoggedIn = true; 
+                        if(isUserLoggedIn){
+                             console.log("redirect to home page");
+                        }
+                        else{
+                                 console.log("redirect to login page");
+                        }
+                  
+ 3.String:  represents seq of char eg:"hello"
+
+ 
+ <html>
+    <head>
+    </head>
+     <body>
+         <script>
+                var username= 'kiran123'; 
+                var password = "ksbdckjsdbckjb";
+                console.log(typeof username); 
+                console.log(typeof password); 
+                console.log(username.toUpperCase().concat("@GMAIL.COM").length);
+                   
+         </script>
+     </body>
+</html>
+
+2. Non Primitive Types: arrays and objects 
+
+Arrays: 
+An Array is a linear data structure which is used to store data in a sequential order. 
+
+syntax: 
+var arr= [10,20,304,40,50];
+in JS, Arrays are dynamic and also accepts different types of values in the array. 
+JS provides lot of predefined functions to work with arrays.
+syn: var arr=[10,20,30,40,50]
+
+ var array = [10,20,30,true,false,"hello","how"];
+              console.log(array[2]);
+              console.log(array[5]);
+              console.log(array[8]);
+                array.pop(); //remove the last element
+                array.pop();
+                array.shift();
+                
+                console.log(array); 
+
+Objects: 
+A javascript object is used to store the data in key value pair format. 
+
+syntax: 
+var object = {
+      key : value, 
+      key: value
+}
+  var user = {
+                    firstname: "kiran", 
+                    lastname: "kumar", 
+                    age: 21, 
+                    location: "hyderabad", 
+                    languages: ["telugu","hindi","english"]
+               }
+                console.log(user.firstname);
+                console.log(user.languages);
+                console.log(user.uid);
+                user.firstname = "Kiran K"; 
+                console.log(user);
+                delete user.lastname;
+                console.log(user);
+                user.pincode = 90001; 
+                console.log(user); 
+
+Problem Statement: Create a product object with 5 key value pairs. 
+                            objects example:var product={ productname:"devices",
+                                 quality:100,
+                                 durationYeras:10,
+                                 feauters:"available",
+                                 battry:"avaliable"
+        }
+                   console.log(product);
+
+
+------------------------------------------------------------------------------------
+
+
+
+Operators: 
+An Operator is a special symbol / keyword which provides some functionality. 
+javascript provides different types of operators.
+
+1. Arithmetic Operators: 
++,-, *, /(quotient), %(remainder), ++, -- 
+ var a=100; 
+                 ++a; // preincrement
+                 console.log(a);
+                 a++; // post increment 
+                 console.log(a);
+                  
+                 --a; // pre decrement
+                 console.log(a);
+                 a--;  // post decrement
+                 console.log(a); // 
+  var a=100, b=200, c="800", d="hello"; 
+                 console.log(a+c+b); // ? n + s = s  = 100800200 
+                 console.log(c+a+b);
+                 console.log(a+b+c);
+                 console.log(a-c);
+                 console.log(a * c);
+                 console.log(a - d);
+
+Comparision Operators: results in  boolean value. 
+>,<,>=,<=,==,===,?:,!=
+           // >,<,>=,<=,==,===,?:,!= 
+           
+           var a=10, b=20, c="10", d=10, e="10s"; 
+           console.log(a > b);
+           console.log(a < b);
+           console.log( a >= d);
+           console.log(a == c); // == checks only for content
+           console.log(a === c); // === checks for content and datatype
+            console.log(a == e); //
+           console.log(a < b ? "a is less than b": "a is greater than b");
+           console.log( a != e);
+           <condition> ?  <true block> : <false block> 
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="email" placeholder="enter email">
+          <button onclick="send()">Send</button>
+        <script>
+                   function send(){
+                     var userEmail = "sai@digital-lync.com"; 
+                    var email = document.getElementById("email").value;
+        userEmail == email ? alert("email sent"): alert("email id not registered"); 
+                   }
+        </script>
+     </body>
+</html>
+
+Logical Operators: 
+&&(AND), ||(OR), !(NOT) 
+ var a=10, b=20, c=30; 
+                  console.log(a < b && a < c);
+                  console.log(a > b && a < c);
+                  console.log(a > b || a < c); 
+                  console.log(a > b || a > c); 
+                  console.log(!(a > b || a > c)); 
+                  console.log(!(a < b && a < c));
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="email" placeholder="enter email">
+         <input type="text" id="password" placeholder="password here">
+          <button onclick="login()">Login</button>
+        <script>
+                   function login(){
+                    var userPassword="Sai123";
+                     var userEmail = "sai@digital-lync.com"; 
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+        userEmail == email && password ==  userPassword ? alert("login success"): alert("login failure"); 
+                   }
+        </script>
+     </body>
+</html>
+
+
+-------------------------------------------------------------------------------------------
+control statments:
+
+control statements: 
+
+There are 3 types of control statements.
+
+1. Sequential :  if, if-else, switch  (the code will excute line by line)
+2. Iterative: while, do-while and for
+3. Jump: continue, return, break
+
+
+1. Sequential :  if, if-else, switch
+
+
+if:  
+
+syntax:  
+
+if(test-condition){
+    // code
+}
+
+
+ var isWorkDone = true; 
+
+                      if(isWorkDone == true){
+
+                        console.log("Work is finished");
+                      }
+
+
+Problem Statement: 
+
+Create a text field and ask the user to enter the age, if the age is greater or equal to 18, alert the 
+user  "eligible to vote". 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+           <input type="number" id="age">
+           <button onclick="submit()">Submit</button>
+         <script>
+                     
+                    function submit(){
+
+                      var age =   document.getElementById("age").value;
+
+                       if(age >= 18){
+                        alert("Eligible for Vote");
+                       }
+                    }   
+
+         </script>
+
+     </body>
+</html>
+
+
+if-else: if we have 2 conditions than we can use if else statment
+
+syntax: 
+
+  if(test-condition){
+
+     // code
+  }
+
+  else{
+
+    // code
+  }
+
+
+   var a=100, b=200;
+
+                     if( a > b){
+                        console.log(" a is greater than b");
+                     }
+                     else{
+                        console.log("a is less than b");
+                     }
+ex: 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+           <input type="number" id="age">
+           <button onclick="submit()">Submit</button>
+         <script>
+                     
+                    function submit(){
+
+                      var age =   document.getElementById("age").value;
+
+                       if(age >= 18){
+                        alert("Eligible for Vote");
+                       }
+                       else{
+                        alert("Not eligible to vote");
+                       }
+
+                    }   
+
+                   
+
+         </script>
+
+     </body>
+</html>
+
+switch: 
+
+If we have more than two conditions, then we can use switch case. 
+
+syntax: 
+
+switch(choice){
+
+  case  case_value1:  // code break;
+  case  case_value2: // code
+  case case_value3: // code 
+  .
+  .
+  .
+  default: // code
+
+
+}
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+                     
+                     var course = "angular"; 
+
+                     switch(course){
+
+                        case "java": console.log("you chose java");  break;
+
+                        case  "dotnet": console.log("you chose dotnet");  break;
+
+                        case  "react": console.log("you chose react");  break;
+
+                        default : console.log("This course is not available");
+                     }
+
+         </script>
+
+     </body>
+</html>
+
+Problem Statement: 
+
+Create a drop down list with 5 languages and based on user selection on a language, diplay Good Morning 
+to the specified language. 
+
+
+
+<!--
+ 1.attributes: element specific, global, event attributes(onchange)
+ 2. drop down list in html :  <select>
+ 3. function: function f1() { // code}
+ 4. switch case:
+
+  1. Slow pace 
+  2. less real time examples
+  3. Assignments
+
+  1. practice ? 
+
+  2. exploration ? 
+
+
+  1. Daily Practice 
+
+                -  Go through the concepts discussed in class 
+                -  explore websites for additional info on the topic 
+                -  learn the next concept ahead of the class
+ 2. Attempt few quizzes 
+ 3. Try solving some realtime problem statements that we use in day to day use. 
+
+
+ -->
+ 
+ <html>
+     <head>
+     </head>
+       <body>
+          <select id="lang" onchange="userSelection()">
+                 <option>Select Language</option>
+                 <option value="mongolian">Mongolian</option>
+                 <option value="telugu">Telugu</option>
+                 <option value="hindi">Hindi</option>
+                 <option value="tamil">Tamil</option>
+                 <option value="malayalam">Malayalam</option>
+          </select>
+
+           <h1 id="text"></h1>
+           <script>
+                function userSelection(){
+                 var text = document.getElementById("text");
+            var languageSelected = document.getElementById("lang").value;
+            console.log("languageSelected", languageSelected); 
+            switch(languageSelected){
+                case "mongolian" : text.innerText= "Өглөөний мэнд";     break; 
+                case "telugu" :  text.innerText= "శుభోదయం";     break; 
+                case "hindi" : text.innerText= "शुभ प्रभात";       break; 
+                case "tamil" : text.innerText= "காலை வணக்கம்";       break; 
+                case "malayalam" :  text.innerText= "സുപ്രഭാതം";      break; 
+            }
+                }
+
+           </script>
+       </body>
+</html>
+
+Switch case example:
+
+<html>
+    <head>
+    
+        <style>
+            h2{
+                text-align: center;
+                font-size: 100;
+                font-style: normal;
+            }
+            h1{
+                text-align: center;
+                background-color: aqua;
+
+            }
+          select{
+            width: 10%;
+            text-align: center;
+            /* height: 10%; */
+            color:brown;
+            font-size: larger;
+            background-color: rgb(168, 175, 175);
+
+          }
+        </style>
+
+    </head>
+    <body>
+        <h1  >List of Ministers</h1>
+ 
+        <select id="list" onchange="userchoice()">
+            
+            <option>list of ministers</option>
+            <option value="@cm">Cheif Minister</option>
+            <option value="@em">Educational Minister </option>
+            <option value ="@hm">Home Minister</option>
+            <option value="@fm">Finance Minister</option>
+          
+      
+        </select>
+        <h2 id="text"></h2>
+        <img id="image" src="">
+   
+        <script>
+            
+            function userchoice(){
+               var selectionministery= document.getElementById("list").value;
+               var list=document.getElementById("text");
+               var image = document.getElementById("image");
+              
+
+                switch(selectionministery){
+                    case "@cm":list.innerText="kcr"; image.src="download.jpg"  ;  break;
+                    case "@em":list.innerText="sabhitha"; image.src="sabitha.jpg" ;  break;
+                    case "@hm":list.innerText="ali"; image.src="ali.jpg";  break;
+                    case "@fm":list.innerText="harish"; image.src="harish.jpg";  break;
+               }
+
+
+            }
+        </script>
+    </body>
+</html>
+
+
+Iterative Statements: 
+
+Iterative Statements are used whenever we want to iterate a list of items ( array). ex: eapudhu zoom lo entha mandhi unaruu ela cheputhamu because( list of iteam) means iteration,
+
+while: 
+
+syntax: 
+
+ while(test-condition){
+
+    // code
+ }
+
+                 var i = 1; 
+
+                 while(i<=10){
+                   console.log(i); // 1 2 3 4 ... 10
+                    i++;
+                 }
+
+Problem Statement: 
+
+Display the list of participants on the console. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+               var participants = ["Hemalatha", "Chakravarthi","Sowjanya","Ashok","Anil"];
+               var index = 0;
+
+               while(index < participants.length){
+                     console.log(participants[index]);
+                     index++;
+               }
+
+         </script>
+
+     </body>
+</html>
+
+Problem Statement: 
+Display the list of participants on the UI. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+        <ol id="list">
+             
+        </ol>
+
+         <script>
+
+             var list =  document.getElementById("list");
+
+             var participants = ["Hemalatha", "Chakravarthi","Sowjanya","Ashok","Anil","kiran","ravi"];
+               var index = 0;
+
+               var listItems = "";
+
+               while(index < participants.length){
+                listItems = listItems +  "<li>"+ participants[index] + "</li>";
+                     index++;
+               }
+
+               console.log(listItems);
+               list.innerHTML = listItems;
+
+               
+              
+
+         </script>
+
+     </body>
+</html>
+
+
+Task: 
+
+Create a product form ( 5 fields), once the user submits the form, display the 
+data on the UI.
+
+
+do-while: 
+
+syntax: 
+
+do{
+
+// code
+
+}while(test-condition)
+
+The do-block will be executed for the very first time without checking the 
+condition. once the do-block gets executed, the test condition will be checked next, 
+based on the test-condition result, the control decides whether to go for do block 
+or not. 
+
+
+  var i=21;
+                do{
+                     console.log(i); // 21
+                     i++;
+                }while(i <= 10)
+
+               
+for-loop: ("for loop kudha do-while laga undhi same")
+
+syntax: 
+
+for(initialization; test-condition; inc/dec){
+    // code
+}
+
+ps:(to print numbers "1 to 10")
+
+
+ for( var i =1; i<11;i++){
+                console.log(i);
+               }
+    
+Task:  
+Problem Statement: 
+Display the list of participants on the UI using for loop. 
+
+var participants = ["Hemalatha", "Chakravarthi","Sowjanya","Ashok","Anil"];
+
+
+
+Problem Statement: (in google json viewer)
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <ul id="list" style="list-style-type: none;">
+ 
+         </ul>
+
+        <script>
+   
+           
+   var products = [
+  {
+    "id": 1,
+    "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "price": 109.95,
+    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 120
+    }
+  },
+  {
+    "id": 2,
+    "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    "price": 22.3,
+    "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
+    "rating": {
+      "rate": 4.1,
+      "count": 259
+    }
+  },
+  {
+    "id": 3,
+    "title": "Mens Cotton Jacket",
+    "price": 55.99,
+    "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 500
+    }
+  },
+  {
+    "id": 4,
+    "title": "Mens Casual Slim Fit",
+    "price": 15.99,
+    "description": "The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.",
+    "category": "men's clothing",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
+    "rating": {
+      "rate": 2.1,
+      "count": 430
+    }
+  },
+  {
+    "id": 5,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
+    "rating": {
+      "rate": 4.6,
+      "count": 400
+    }
+  },
+  {
+    "id": 6,
+    "title": "Solid Gold Petite Micropave ",
+    "price": 168,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
+    "rating": {
+      "rate": 3.9,
+      "count": 70
+    }
+  },
+  {
+    "id": 7,
+    "title": "White Gold Plated Princess",
+    "price": 9.99,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
+    "rating": {
+      "rate": 3,
+      "count": 400
+    }
+  },
+  {
+    "id": 8,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "category": "jewelery",
+    "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
+    "rating": {
+      "rate": 1.9,
+      "count": 100
+    }
+  },
+  {
+    "id": 9,
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "price": 64,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+    "rating": {
+      "rate": 3.3,
+      "count": 203
+    }
+  },
+  {
+    "id": 10,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
+    "rating": {
+      "rate": 2.9,
+      "count": 470
+    }
+  },
+  {
+    "id": 11,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5",
+    "price": 109,
+    "description": "3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking & Correction) to provide the optimized performance and enhanced reliability.",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 319
+    }
+  },
+  {
+    "id": 12,
+    "title": "WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive",
+    "price": 114,
+    "description": "Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
+    "rating": {
+      "rate": 4.8,
+      "count": 400
+    }
+  },
+  {
+    "id": 13,
+    "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+    "price": 599,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+    "rating": {
+      "rate": 2.9,
+      "count": 250
+    }
+  },
+  {
+    "id": 14,
+    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "price": 999.99,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
+    "category": "electronics",
+    "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+    "rating": {
+      "rate": 2.2,
+      "count": 140
+    }
+  },
+  {
+    "id": 15,
+    "title": "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats",
+    "price": 56.99,
+    "description": "Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
+    "rating": {
+      "rate": 2.6,
+      "count": 235
+    }
+  },
+  {
+    "id": 16,
+    "title": "Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket",
+    "price": 29.95,
+    "description": "100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
+    "rating": {
+      "rate": 2.9,
+      "count": 340
+    }
+  },
+  {
+    "id": 17,
+    "title": "Rain Jacket Women Windbreaker Striped Climbing Raincoats",
+    "price": 39.99,
+    "description": "Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
+    "rating": {
+      "rate": 3.8,
+      "count": 679
+    }
+  },
+  {
+    "id": 18,
+    "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+    "price": 9.85,
+    "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
+    "rating": {
+      "rate": 4.7,
+      "count": 130
+    }
+  },
+  {
+    "id": 19,
+    "title": "Opna Women's Short Sleeve Moisture",
+    "price": 7.95,
+    "description": "100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash & Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, more feminine silhouette and Added Comfort",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
+    "rating": {
+      "rate": 4.5,
+      "count": 146
+    }
+  },
+  {
+    "id": 20,
+    "title": "DANVOUY Womens T Shirt Casual Cotton Short",
+    "price": 12.99,
+    "description": "95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is soft and has some stretch., Occasion: Casual/Office/Beach/School/Home/Street. Season: Spring,Summer,Autumn,Winter.",
+    "category": "women's clothing",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
+    "rating": {
+      "rate": 3.6,
+      "count": 145
+    }
+  }
+]
+
+/*
+
+ 1. iterate the array and capture the price, name , image
+
+ 2. on each iteration, create an li and have price, name, image in it. 
+
+ 3. concatenate all 20 li's in to 1 string
+
+ 4. dynamically update all the lis to one <ul>
+
+     hint: innerHTML = 
+
+*/
+
+ var productsListItems = "";
+  for( var index= 0; index<products.length; index++){
+        productsListItems = productsListItems +   "<li>"+ products[index].title + " &nbsp;&nbsp;&nbsp;"+ products[index].price+ "&nbsp;&nbsp;&nbsp;"+ "<img width='64px' height='64px' src=" +products[index].image+">"+"</li>";
+        
+  }
+  document.getElementById("list").innerHTML = productsListItems;
+
+  console.log(productsListItems);
+         </script>
+
+
+     </body>
+</html>
+
+
+Jump Statements: 
+
+break: used to exit from the block
+return:used to exit from the function
+continue:used to skip an iteration
+
+
+break, return, continue 
+
+break: break is used to terminate a block of code. 
+
+use case: we use break in switch case to come out of switch block.
+
+return: 
+
+return is used to return some value from a function. 
+
+return also can be used to terminate a function. 
+
+function f1(){
+                 var x=100; 
+                 return x;
+              }
+
+             var result = f1();
+             console.log(result)
+
+
+
+example:(authenticate means whether the username & password is correct are not)
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+ 
+         <script>
+             
+               function authenticate(username, password){
+
+                 if(username == "digital" && password == "lync"){
+                     return true;
+                 }
+                 else{
+                    return false;
+                 }
+
+               }
+
+              function login(username, password){
+              
+                var isTrue = authenticate(username,password);
+
+                if(isTrue){
+                    console.log("login success");
+                }
+                else{
+                    console.log("login failure")
+                }
+              }
+
+              login("digital1","lync");
+
+
+         </script>
+
+     </body>
+</html>
+
+
+continue: 
+
+If we want to skip an iteration, then we can use continue.
+
+
+ for(var i=1;i<=10;i++){             (print 1 to 10 numbers) (1 to print ayndhi) (2 to 3 print avadhuu)
+                if(i == 2 || i == 3){
+                    continue;
+                }
+                
+                console.log(i);
+             }
+ 
+
+ Problem Statement: 
+
+ var users= ["kiran", "kiran","rajesh","rajesh","ravi","ravi","ravi"];
+
+ var users= ["kiran", "kiran","rajesh","rajesh","ravi","ravi","ravi"];
+               var tempArray = []; //["kiran","rajesh","ravi"]
+             for( var i =0 ; i<users.length; i++){
+                 
+                    if(tempArray.includes(users[i])){
+                        continue;
+                    }
+
+                 tempArray.push(users[i]);
+                 
+             }
+
+             console.log(tempArray);
+
+----------------------------------------------------------------------------------------------------------------
+
+Functions: 
+
+A function is a block of code,takes an input(optional), process the code ad 
+provides some result. 
+
+We use functions to provide functionality.
+
+syntax: 
+
+   function function_name(parameters){
+
+     // code 
+   }
+
+    function signUp(userdetails){
+
+             // code
+    }
+
+    function sendEmail(email){
+              // code
+    }
+
+    signUp({username:"x"});
+
+     sendEmail("digi@gmail.com");
+
+
+
+     example: 
+
+     <html>
+    <head>
+
+    </head>
+
+     <body>
+
+         Enter Email : <input type="text" id="email">
+         <button onclick="sendEmail()">Send Email</button>
+ 
+         <script>
+             
+               function sendEmail(){
+                var email = document.getElementById("email").value;
+                     console.log("Email Sent to :"+ email);
+               }
+
+         </script>
+
+     </body>
+</html>
+
+****function important topic:
+                          <script>
+                              function f1(a,b){       (a is variables b is parameter)
+                                 console.log(a);     (function parameter looks like a local variables)
+                                 console.log(b);
+                              }
+                           f1(10,20)
+                           f1()
+
+
+Problem Statement: 
+
+Implement Product Management System using Javascript. 
+
+1. Add Product  - name, price, imageURL, brand
+2. Update Product  (Task)
+3. List All Products 
+4. Delete Product (Task)
+
+
+Solution:
+
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+         <center>
+
+          <h1>Product Add Form</h1>
+          <input type="text" id="name" placeholder="enter product name"> <br><br>
+          <input type="number" id="price" placeholder="enter product price"><br><br>
+          <input type="text" id="imageURL" placeholder="enter image URL"><br><br>
+          <input type="text" id="brand" placeholder="enter product brand"><br><br>
+
+          <button onclick="addProduct()">Add Product</button>
+
+          <hr>
+
+          <table border="1" width="100%">
+              <thead>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Brand</th>
+                    <th>Image</th>
+                    <th colspan="2">Action</th>
+              </thead>
+
+               <tbody id="tablebody" style="text-align: center;">
+                   
+               </tbody>
+          </table>
+        </center>
+         <script>
+
+                    var products = [];
+                    function addProduct(){
+                             var name= document.getElementById("name").value; 
+                             var price = document.getElementById("price").value;
+                             var imageURL = document.getElementById("imageURL").value; 
+                             var brand = document.getElementById("brand").value;
+
+                             var product = {
+                                name: name, 
+                                price: price, 
+                                imageURL: imageURL, 
+                                brand: brand
+                             }
+                             products.push(product);
+
+                             //console.log(products);
+                             showProducts();
+                           
+                    }
+
+                   function showProducts(){
+
+                         var tableRowsCombiner = "";
+                        for( var index = 0; index < products.length ; index ++){
+                         tableRowsCombiner = tableRowsCombiner +  "<tr><td>"+products[index].name+"</td>" + "<td>"+ products[index].price+"</td>"+"<td>"+ products[index].brand +"</td>"+ "<td> <img width='64px'  height='64px' src=" + products[index].imageURL+"></td>"+"<td><button>Delete</button></td> <td><button>Edit</button></td>"+"</tr>";
+                        }
+
+                        console.log(tableRowsCombiner);
+
+                         document.getElementById("tablebody").innerHTML = tableRowsCombiner;
+
+                   }
+
+         </script>
+
+    </body>
+</html>
+
+
+
+Anonymous Functions: 
+
+A function without a name is known as Anonymous function. 
+
+ex:  function(){
+     // code
+}
+
+
+Anonymous functions are used to pass them as arguments to other functions. (for loop use cehsi while do while )
+
+ function f1(a){
+                         //  console.log(a);
+                           a();
+                    }
+
+                    f1(function(){
+                          console.log("Anonymous");
+                    });
+        
+
+example: i have an array : callback function means anonymouys function
+
+                
+                 var arr= [10,20,30,40,50,60,70]; 
+
+                //   for( var index = 0 ; index < arr.length ; index++){
+                //             console.log(arr[index]);
+                //   }
+
+                  arr.forEach(function(value){
+                            console.log(value);
+                  })
+
+
+Function Expressions: 
+
+if we can refer an anonmyous function with a variable, then it is called as 
+function expression.
+
+ 
+               function f1(x){
+                   x();
+               }  
+
+               function f2(y){
+                  y();
+               }
+
+               function f3(z){
+                    z();
+                }
+
+                var fn = function(){ // function expression
+                console.log("x8");
+               }
+               
+               f1(fn);
+
+               f2(fn);
+
+               f3(fn);
+
+               fn();
+
+               fn = 100;
+
+               fn();
+
+First class functions: 
+
+If any function that can be passed as an argument, can be stored in a variable, 
+can be returned as a returned value from another function, then those kind 
+of functions can be called as first class functions. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+                
+            function f1(){
+                //
+                   return function(){
+                    console.log("returned function");
+                   }
+            }
+
+           var x =  f1();
+           x();
+            f1()();
+
+        
+          </script>
+
+     </body>
+</html>
+
+
+IIFE’s: Immediately invoked function expression 
+
+If we want a function to be automatically invoke and to be invoked only once, then 
+we can use IIFEs 
+
+syntax: 
+
+  (function(){
+      // logic
+  })();
+sometimes if you see as in when you load a webpage it might load some dynamic data it loading right
+
+
+  <html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+             (function(){
+                console.log("IIFEs 1");
+             })();
+             (function(){
+                console.log("IIFEs 2");
+             })();
+             (function(){
+                console.log("IIFEs 3");
+             })();
+          </script>
+
+     </body>
+</html>
+
+
+Call, Apply and Bind: 
+
+
+Call function:
+
+
+Call function is used to subsitute an object into another object to access the functions of the target object. 
+
+
+Apply also works same like call function but apply functions auto splits the array values while 
+passing the arguments.
+
+ var employee = {
+                   eid:101, 
+                   name:"kiran", 
+                   getDetails: function(a,b,c,d){
+                    console.log(arguments[5]);
+                      return this.eid + "\t"+ this.name + "\t"+ a + "\t"+ b + "\t"+ c + "\t"+ d;
+                   }
+               }
+               var employee2 = {
+                eid: 102, 
+                name: "rajesh"
+               }
+
+              var arr=[10,20,30,40,50,60];
+               console.log(employee.getDetails.call(employee2,arr[0],arr[1],arr[2],arr[3]));
+               console.log(employee.getDetails.apply(employee2,arr));
+
+
+Call by Value: 
+
+
+Call by value is a concept where the variable's copy (value) is passed as an argument while calling the function. 
+
+
+ var a=100; // number
+
+                     function f1(x){
+                          x=8;
+                          console.log(x); // 8
+                     }
+                     f1(a); // The copy of a's value is passed -> f1(100) - call by value
+                     console.log(a); // 100
+
+Call by value works with primitive types ( number, boolean, string).
+
+var str="hello"; 
+                    function x(y){
+                         y = y.concat("world");
+                         console.log(y); // helloworld
+                    }
+                    x(str); // call by value
+                    console.log(str); // hello
+
+call by reference: 
+
+It works based on address. it is applicable for non primitive types. 
+
+<html>
+    <head>
+
+    </head>
+
+    <body>
+
+         <script>
+ 
+
+                    var arr= [1,2,3]; 
+
+                    function f(x){
+                           x.push(4);
+                           x.push(5);
+                           console.log("x",x);
+                    }
+
+                    f(arr); // call by reference ->address of arr is passed.
+                    console.log("arr", arr);
+                
+         </script>
+
+    </body>
+</html> 
+
+
+closures: 
+
+A function inside another function is called as nested function. 
+
+In JS, we create nested functions to provide private functions.
+
+syntax: 
+
+ function outer(){
+                           var a=10, b=30;   // this is local variables
+                         function inner(){ // private function - closure scope
+                            console.log(a); 
+                            console.log(b);
+                         }
+                         inner();
+                      }
+                      outer();
+------------------------------------------------------------------------------------------------------
+
+
+Arrays: 
+
+An Array is a linear data structure and used to store data in a sequential 
+order. 
+
+syntax: 
+
+var arr= [1,2,3,4,4]; 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+             var arr= [100,true, false, "hello", "hey", 200, 300]; 
+
+             console.log(arr[2]);
+
+              // Loop 
+
+              for(var i=0;i<arr.length;i++){
+                // console.log(arr[i]);
+              }
+
+              // methods 
+
+              console.log(arr);
+
+              arr.push(400);
+              console.log(arr);  // 100 ture flase hello hey 200 300
+
+              arr.unshift(10);
+              console.log(arr);
+
+             var index = arr.indexOf(100);
+             arr.splice(index,0,50);
+             console.log(arr);
+
+               arr.pop();
+               console.log(arr);
+
+               arr.shift();
+               console.log(arr);
+
+              var x = arr.indexOf(200);
+               arr.splice(x,1);
+               console.log(arr);
+
+({// foreach vs filter vs map})
+basically we can go iterative the element.
+
+  foreach:              console.log("----------------------------")
+                 arr.forEach(function(value, index){ =>(anonymus function)
+                       console.log(value);
+                 })
+                 console.log("----------------------------")
+
+
+   filter fun:  ****    console.log("filter demo")
+ 
+                      var arr2= [0,1,2,3,4,5,6,7]; 
+
+                      var res = arr2.filter(function(value){
+                              return value * 2; // 1 * 2 = 2 
+                      })
+
+                  console.log(res); // [0,2,6,8,10,12,14] 
+
+     Map fun:****
+                  var res2 = arr2.map(function(value){
+                              return value * 2; // [0,2,6,8,10,12,14]
+                  })
+                  console.log(res2);
+                  console.log(arr2);
+
+    
+         </script>
+
+     </body>
+</html>
+
+map fun is going to return the result of operation 
+filter function is going to evaluate that result into a boolean value if it is ture return that element .if it is flase not return that element.
+
+-----------------------------------------------------------------------------------------------
+
+Numbers and Dates: 
+
+Numbers: 
+
+In JS, we can create numbers in 2 types. 
+
+1. as a primitive value 
+2. as an object
+
+  var age = 21; 
+                    var age2 = new Number(21);
+
+                    console.log(age); 
+                    console.log(age2);
+
+                    console.log(age === age2);
+                    console.log( age  == age2);
+
+                    var currency = 129.1234323; 
+
+                    console.log(currency.toFixed(2));
+                    console.log(currency.toPrecision(5)); 
+
+Date:
+
+Date Object is used to capture the date and time.
+
+
+ var date = new Date();
+                 console.log(date.getDate());
+                 console.log(date.getFullYear());
+                 console.log(date.getMonth());
+                 console.log(date.getSeconds());
+                 console.log(date.getMinutes());
+                 console.log(date.getHours());
+
+Problem Statement: 
+
+ create the date and time in the following format.
+
+ HH:MM:SS  DD/MM/YYYY
+ 
+
+ 08:02:12  03/02/2023
+
+ 
+                //  var date = new Date();
+                //  console.log(date.getDate());
+                //  console.log(date.getFullYear());
+                //  console.log(date.getMonth());
+                //  console.log(date.getSeconds());
+                //  console.log(date.getMinutes());
+                //  console.log(date.getHours());
+
+               // HH:MM:SS  DD/MM/YYYY
+
+               function concatZero(data){
+
+                 if(data < 10){
+                       data = "0"+ data;   
+                 }
+                 return data;
+
+               }
+
+               var date = new Date();
+               var t = concatZero(date.getHours())+":"+ concatZero(date.getMinutes())+":"+ concatZero(date.getSeconds());
+               var d = concatZero(date.getDate())+"/"+ concatZero((date.getMonth()+1)) + "/"+ date.getFullYear();
+               console.log(t +"\t\t" + d);
+
+Problem Statement: 
+
+Create a  basic digital clock using date object.
+
+<html>
+    <head>
+
+         <style>
+
+                  h1{
+                    border: 5px red solid; 
+                    margin:655px; 
+                    padding-left: 30px;
+                    padding-top:10px;
+                    padding-bottom: 10px;
+                    text-shadow: red 2px 2px;
+                  }
+
+         </style>
+
+    </head>
+
+     <body>
+
+        <h1 id="time"></h1>
+
+            <script>
+                 
+               
+                 function concatZero(data){
+
+                    if(data < 10){
+                        data = "0"+ data;   
+                    }
+                    return data;
+
+                            }
+
+                            setInterval(function(){
+                                var date = new Date();
+    var t = concatZero(date.getHours())+":"+ concatZero(date.getMinutes())+":"+ concatZero(date.getSeconds());
+
+     document.getElementById("time").innerHTML =  t;
+                            },1000);            
+            </script>
+
+     </body>
+</html>
+
+----------------------------------------------------------------------------------------------------
+
+objects:
+
+Objects: Objects is a key-value pair
+
+syntax: 
+var obj = {
+    key : value, 
+    key : value,
+    .
+    .
+    .
+}
+key should be a string and should be unique
+value can be of any type and need not to be unique. 
+
+Methods of Objects:
+
+create: to create a new object from the existing object. 
+ var bank= {
+                    bank_name: "ICICI", 
+                    ifsc: "ICIC0897999", 
+                    branch: "Hitech City"
+                   }
+                  var employee = Object.create(bank);
+                  console.log(employee.bank_name);
+                  employee.name= "Kiran";
+                  employee.role="admin"; 
+                  console.log(employee);
+ 
+ 
+ freeze: (freen means looking)
+
+  var config = Object.freeze({
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     });
+                     config.port = 6777;
+                     config.username= "mbsdjd"
+                     delete config.host;
+                     console.log(config);
+
+keys and values: keys values aani kavali anteyy edhi use cheayli)
+ var config ={
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     };
+                   console.log(Object.keys(config));
+                   console.log(Object.values(config));
+
+seal: The seal function allow only updation of value of a key in the object.
+  var config = Object.seal({
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     });
+                      config.port= "8888"; 
+                   
+                     console.log(config);
+
+this: 
+this is a keyword that refers to the current object.
+  var employee = {
+                      name: "kiran", 
+                      address: "hyderabad", 
+                      getDetails: function(){
+                        
+                                    return this.name + "\t"+ this.address
+                      }
+                  }
+                  var employee2= {
+                      name:"raj", 
+                      address: "banglore",
+                      
+                  }
+                  var employee3= {
+                      x: function(){
+                      }
+                  }
+                   console.log(employee.getDetails.call(employee2)); // this -> employee2
+                   console.log(employee.getDetails()); // this -> employee
+
+Problem Statement: 
+Implement simple banking system with the following features. 
+1. fund transfer
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+          function Customer(cid, name,accno,balance){
+                this.custId = cid;
+                this.name=name;
+                this.acno=accno;
+                this.balance= balance;
+          }
+          Customer.prototype.fundTransfer =function(reciever,amount){
+                          reciever.balance = reciever.balance + amount;
+                          this.balance = this.balance - amount;
+                }
+                Customer.prototype.checkBalance =function(){
+                                     return this.balance;
+                }
+            Customer.prototype.bankname= "ICICI";
+         var c1= new Customer(101, "kiran",10001, 90000);
+         var c2= new Customer(102, "raj",10002, 900000);
+         var c3= new Customer(103, "naveen",10003, 900);
+            c1.fundTransfer(c3,50000);
+            console.log(c1.checkBalance());
+            console.log(c3.checkBalance());
+            console.log(c1);
+    
+         
+            
+ 
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+Based on the array of objects, prepare a dynamic table using javascript.
+var users= [
+    {
+         username: "kiran", 
+         email: "kiran@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer"
+    },
+     {
+         username: "naveen", 
+         email: "naveen@gmail.com", 
+         department: "Development", 
+         designation:"Senior Software Engineer"
+    },
+     {
+         username: "Rajesh", 
+         email: "rajesh@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer"
+    },
+     {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist"
+    }
+]
+<html>
+    <head>
+    </head>
+     <body>
+         <table width="100%" border="1">
+              <thead id="thead">
+              </thead>
+               <tbody id="tbody">
+               </tbody>
+         </table>
+         <script>
+         
+         
+var users= [   
+    {
+         username: "kiran", 
+         email: "kiran@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer", 
+         id:101, 
+         gender:"male"
+    },
+     {
+         username: "naveen", 
+         email: "naveen@gmail.com", 
+         department: "Development", 
+         designation:"Senior Software Engineer",
+         id:102,
+         gender:"male"
+    },
+     {
+         username: "Rajesh", 
+         email: "rajesh@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer",
+         id:103,
+         gender:"male"
+    },
+     {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:104,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:105,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:106, 
+         gender:"male"
+    }
+]
+  var user = users[0];
+  var tableHeaders = Object.keys(user);
+  console.log(tableHeaders);
+   var tableHeaderContent = ""; 
+     tableHeaders.forEach(function(key){
+          tableHeaderContent = tableHeaderContent + "<th>"+ key+"</th>"
+     })
+     console.log(tableHeaderContent);
+     document.getElementById("thead").innerHTML = tableHeaderContent
+    
+     var tableBodyContent= ""; 
+        users.forEach(function(user){
+                   var values =  Object.values(user);
+                   var trow = "<tr>" + convertValuesToRowItems(values)  +"</tr>";
+                   tableBodyContent = tableBodyContent + trow;
+        })
+        console.log(tableBodyContent);
+        document.getElementById("tbody").innerHTML = tableBodyContent;
+         function convertValuesToRowItems(values){
+            var finalContent = ""; 
+            values.forEach(function(value){
+                   finalContent = finalContent + "<td>"+ value + "</td>";
+            })
+            return finalContent;
+         }
+         </script>
+     </body>
+</html>
+
+----------------------------------------------------------------------------------------------------------
+
+ Strings: 
+
+Strings are immutable which means once you create a string, we cannot modify them. 
+however, if we want to reassign a new value, then its possible.
+
+ var str1= "digital"; 
+                  var str2= "lync"; 
+                 str1= str1.concat(str2); 
+                  console.log(str1); //  
+
+Javascript provides different types of predefined methods on string operations. 
+
+
+ var str1= "digital lync"; 
+                  console.log(str1.toUpperCase());
+                  console.log(str1.endsWith("l"));
+                  console.log(str1.startsWith("x"));
+                  console.log(str1.includes("at"));
+                  console.log(str1.indexOf("d"));
+                  console.log(str1.replace("di","he"));
+                  console.log(str1.split(" ")); 
+                  console.log(str1.bold());
+                  console.log(str1.italics());
+                  document.write(str1.bold()); 
+                  document.write(str1.italics()); 
+                  document.write(str1.link("https://www.facebook.com")); 
+
+
+Problem Statement: 
+
+var str = "hello how are you doing"; 
+
+reverse the string. 
+
+gniod uoy era woh olleh 
+
+
+
+ var str = "hello how are you doing";
+       var revStr= "";
+
+        for(var i=str.length-1; i > 0; i--){
+              revStr =  revStr + str[i];
+        }
+        console.log(revStr) 
+
+        //gniod uoy era woh olle
+                 
+Problem Statement: 
+
+var str = "hello how are you doing"; 
+
+Reverse the word in the same place. 
+
+   olleh woh era uoy gniod 
+
+
+   var str = "hello how are you doing";
+        
+           var splitarr = str.split(" ");
+           console.log(splitarr);
+          
+         var res =  splitarr.map(function(word){
+            var revStr = "";
+             for(var i=word.length-1; i >= 0; i--){
+              revStr =  revStr + word[i];
+             }    
+             return revStr;      
+           })
+
+           console.log(res);
+           console.log(str);
+              str = res.join(" ");
+              console.log(str);
+
+
+alternate:
+
+
+ var str = "hello how are you doing";
+           var splitarr = str.split(" ");
+           console.log(splitarr);
+           var finalStr = "";
+           for(var x=0; x<splitarr.length; x++){
+                  var word = splitarr[x];
+                  var temp = "";
+                  for(var y = word.length - 1; y >= 0; y--){
+                           finalStr = finalStr + word[y];
+                  }
+                  finalStr = finalStr + " "
+           }
+           console.log(str);
+           console.log(finalStr);
+
+
+Validations:
+
+
+Problem Statement: 
+
+Create a password field with the following constraints. 
+
+1. password should be atleast 8 chars 
+2. atleast 1 uppercase 
+3. atleast 1 lowercase 
+4. atleast 1 digit 
+5. atleast 1 special character 
+
+
+
+
+<html>
+    <head>
+    </head>
+     <body>
+
+         <input type="text" id="password" onkeyup="verify()"> <span id="msg" style="color:red"></span>
+
+        <script>
+
+              var msg = document.getElementById("msg");
+                 function verify(){
+                   var password =  document.getElementById("password").value;
+
+                   console.log(password);
+                    if(password.length < 8){
+                           msg.innerText = "Password should be atleast 8 chars";
+                           return;
+                    }
+                    else{
+                        msg.innerText = "";
+                    }
+                    if(checkForUpperCase(password)){
+                        msg.innerText = "";
+                    }
+                    else{
+                        msg.innerText = "Password should have atleast 1 upper case";
+                    }
+                 }
+
+                 function checkForUpperCase(str){
+                    var isFound = false; 
+
+        var UC = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+                    for(var i=0;i<str.length; i++){
+                              if(UC.includes(str[i])){
+                                isFound= true;
+                                break;
+                              }
+                    }
+                    return isFound;
+                 }
+
+
+
+
+
+
+      /*
+      1. password should be atleast 8 chars 
+2. atleast 1 uppercase 
+3. atleast 1 lowercase 
+4. atleast 1 digit 
+5. atleast 1 special character 
+
+https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+      */
+
+        
+
+         </script>
+     </body>
+</html>
+
+
+--------------------------------------------------------------------------------------
+
+
+scope:Scopes, Debugging and Events 
+Error Handling
+Garbage Collection
+DOM
+Best Coding Practices
+
+
+Debugging: It is process of finding the code that raised an issue / bug. (blue is breah point)
+(we can start the debugging break is the location from where we can start the debugging)
+
+Scopes: 
+
+In JS, we have 2 scopes, 
+
+1. Local Scope :
+
+This gets created when a function is in execution. All the local variables are 
+created in the local scope only.
+
+2. Global Scope: 
+
+This gets created as soon as the application is deployed on to the browser. 
+
+All the global variables and predefined functions are available in global scope. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+                   var a=100; 
+                   var b=200;  // Global Scope
+
+                   function f1(){
+
+                    var x=20; // Local Scope
+                    var y = 10; 
+                    console.log(x);
+                    console.log(y);
+                   }
+
+                   f1();
+                   console.log(a); 
+                   console.log(b);
+
+
+         </script>
+
+     </body>
+</html>
+
+
+Events: 
+
+Any action is considered as an event. 
+
+whenever an event occurs, there should be an event handler. 
+
+JS provides different types of events based on the requirement. 
+
+HTML communicates with javascript using events. 
+
+ex: onclick, onchange, onclear, onmouseover, onmouseout, onsubmit,onkeyup....
+
+
+Problem Statement: 
+
+Highlight the image based on user hover on it. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <img id="iphone" onmouseover="zoom()" onmouseout="unzoom()" src="iphone.jpg">
+
+         <script>
+
+                   function zoom(){
+                       var iphone =  document.getElementById("iphone");
+                       iphone.style.width="230";
+                       iphone.style.height="240";
+                   }
+
+                   function unzoom(){
+                    var iphone =  document.getElementById("iphone");
+                       iphone.style.width="225";
+                       iphone.style.height="225";
+                   }
+
+         </script>
+
+     </body>
+</html> 
+
+Ref: https://www.w3schools.com/jsref/dom_obj_event.asp 
+
+Error Handling:
+
+Whenever an error occurs in the code, the application gets crashed.
+
+in error handling we have two blocks one is try and another one is catch
+basically write the code inside the block.
+
+(we can write the code inside the block if any error is occured. it will goes to catch block.so the catch block will catch the error)
+ 
+ it will not stop the execution
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+                 var user; 
+                 function fetchData(){
+                     // Talk to backend and get user data 
+
+                    //  user = {
+                    //      name: "kiran"
+                    //  }
+                 }
+                 fetchData(); 
+                 try{
+                  if(user.name == "kiran"){
+                        console.log("valid user")
+                  }
+                  else{
+                    console.log("invalid user")
+                  }
+                }
+                catch(error){
+                     console.log(error);
+                }
+                finally{
+                    user = null;
+                }
+                
+                  var names = ["abc","jsd","fdlksdv"]; 
+
+                  console.log(names);
+
+         </script>
+
+     </body>
+</html>
+
+
+
+Custom Error Messages:
+-----------------------------------------------------------------------------------------------------
+
+Garbage Collection
+DOM
+Best Coding Practices
+
+
+Garbage Collection: 
+
+Any unused / unreferenced object is considered as garbage.
+
+Javascript runtime engine is responsible for garbage collection. 
+
+whenever the memory threshold is reached, then Javascript runtime engine calls 
+garbage collector to collect the garbage ( freeing of memory -> removing of unused / unreferenced objects). 
+
+However, to support GC, we need to write garbage collector friendly code. 
+
+var obj  = {
+     name: "kiran"
+}
+console.log(obj); 
+obj = null; 
+
+
+
+DOM:  Document Object Model 
+
+Using DOM, We can perform the following operations, 
+
+1. dynamically change the html elements 
+2. create new elements 
+3. remove elements 
+4. access elements and modify them
+5. add events dynamically. 
+
+Every html tag is considered as a html element according to DOM. 
+Every element will have (optional) attributes.
+
+Methods: 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <input type="text" id="username">
+          <p></p>
+          <h1 class="abc"></h1>
+         <script>
+
+             console.log(document.head);
+             console.log(document.body);
+            var username = document.getElementById("username");
+            console.log(username);
+            username.placeholder ="enter username";
+            username.size =40;
+
+           var p = document.getElementsByTagName("p");
+           console.log(p);
+           p[0].innerText = "Good Morning!";
+
+            // getElementsByName,getElementsByClassName, querySelector(),querySelectorAll()
+
+
+         </script>
+
+     </body>
+</html>
+
+events and listeners: (when where we click on greeting and what my requrinment is it should popup)
+
+<html>
+    <head>
+
+    </head>
+     <body>
+
+        <button class="abc">Greetings</button>   // when were i click on greeting  and whats my requrinment is and it should popup
+
+         <button name="x"></button>
+         <script>
+                var abc = document.getElementsByClassName("abc");
+                console.log(abc);
+                abc[0].addEventListener("click", function(){     //click means eventname //function means eventlistner
+                       alert("Good Morning!");
+                } )
+                
+                var x = document.getElementsByName("x");
+                console.log(x[0]);
+                x[0].innerText ="Hover on Me"; 
+                x[0].addEventListener('mouseover', function(){
+                    alert("Mouse over event is triggered");
+                })
+         </script>
+     </body>
+</html>
+
+navigation: (dom is a tree strucuture)
+
+
+<html>
+    <head>
+
+    </head>
+     <body>
+          <p></p>
+         <script>
+              
+             var html = document;
+           html.body.firstChild.nextSibling.innerText= "Good Morning!"; (inner.text eapudhu ui medha goodmornig display aathudhi)
+
+         </script>
+     </body>
+</html>
+
+
+creation and removal of elements. 
+
+<html>
+    <head>
+
+    </head>
+     <body>
+           <form id="form">
+
+           </form>
+         <script>
+             var input = document.createElement("input");
+               input.placeholder = "enter otp"; 
+               input.type ="text";
+               input.id="otp";
+
+               var button = document.createElement("button");
+                 button.innerText ="Submit"; 
+                 button.addEventListener("click", function(){
+                    event.preventDefault(); //IT WILL STOP THE REFRESH
+                          console.log(document.getElementById("otp").value);
+                 })
+
+                 var form = document.getElementById("form");
+                 form.appendChild(input); 
+                 form.appendChild(button);
+
+         </script>
+     </body>
+</html>
+
+
+for removal : use remove()
+
+Self Learning:  HTMLCollection vs NodeList
+
+Best Coding Practices: 
+
+1. Always follow naming conventions.
+
+            variables - noun  - follow camelCase
+            constants - noun - upper case 
+            functions - verb  - follow camelCase 
+
+2. Add minimal comments to the code. 
+
+3. Always write garbage collector friendly code. 
+
+4.  use === instead of  ==   (it will check the content and datatype)
+
+5. Always write JS code in seperate files. 
+
+6. Every function should not exceed more than 20 lines of code and also one function 
+should take only one responsibility. 
+
+7. JSLint to get warnings incase if we don't follow the best coding practices. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+

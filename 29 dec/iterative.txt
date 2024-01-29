@@ -1,0 +1,129 @@
+Iterative Statements: 
+While, do-while and for: 
+If we have a list of items then we can use iterative statements. 
+while: 
+syntax: 
+ while(test-condition){
+    // code
+ }
+ print list of 1 to 10 numbers
+  var i=1; 
+                 while(i <=10){
+                      console.log(i); 
+                      i++;
+                 }
+                 
+<html>
+    <head>
+    </head>
+     <body>
+         
+        <input onkeyup="checkForUsername()" type="text" id="username" placeholder="enter username"> <span id="msg"></span>
+         <script>
+            var usernames= ["kiran","rajesh","john","naveen","kavya","anil"]; 
+             function checkForUsername(){
+                 console.log("abc");
+                var username = document.getElementById("username").value;
+                var index= 0; 
+                var isUsernameTaken = false;
+                while(index < usernames.length){
+                     if(username == usernames[index]){
+                          isUsernameTaken = true; 
+                          break;
+                     }
+                    index++;
+                }
+                 if(isUsernameTaken){
+                         document.getElementById("msg").innerText = "Username already taken!";
+                 }
+                 else{
+                    document.getElementById("msg").innerText = "Username available!";
+                 }
+             }
+                  
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+Implement simple commenting system using iterative statements. 
+<html>
+    <head>
+    </head>
+     <body>
+          <img src="3896.jpeg" width="630px" height="280px"> <br><br>
+          <input type="text" id="username" placeholder="enter username"> <br><br>
+        
+         <textarea rows="4" cols="50" id="comment" placeholder="add comment"></textarea>
+         &nbsp; &nbsp; &nbsp; &nbsp; <button onclick="addComment()">Add Comment</button> 
+          <hr>
+           <ul style="list-style-type: none;" id="list">
+                
+           </ul>
+         <script>
+                          var comments = [];
+                     function addComment(){
+                        var username = document.getElementById("username").value; 
+                        var comment = document.getElementById("comment").value; 
+                       
+                          var userComment = {
+                            username: username, 
+                            comment:comment, 
+                            commentId: generateUniqueId()
+                          }
+                          comments.push(userComment);
+                           console.log(comments);
+                           clearFields();
+                           showComments();
+                     }
+                    function showComments(){
+                        
+                             var index = 0; 
+                             var listItems = "";
+                             while(index < comments.length){
+                                    listItems = listItems +  "<li>" + "<b>"+comments[index].username+"</b> &nbsp;&nbsp;&nbsp; :" +"<span id='"+('c'+comments[index].commentId)+"' contenteditable='false'>"+comments[index].comment+"</span>"+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "<button onclick='deleteComment("+index+")'>Delete</button>"+ "&nbsp;&nbsp;"+ "<button id='"+comments[index].commentId+"' onclick='editComment("+comments[index].commentId+")'>Edit</button>"  +"</li> <br>"
+                                      index++;
+                             } 
+                             console.log(listItems);
+                             document.getElementById("list").innerHTML = listItems;
+                    }
+                    var counter = 0;
+                     function generateUniqueId(){
+                         counter++; 
+                         return counter;
+                     }
+                     function deleteComment(index){
+                           comments.splice(index,1); 
+                           showComments();
+                          
+                      }
+                      function clearFields(){
+                        document.getElementById("comment").value = ""; 
+                        document.getElementById("username").value = "";
+                      }
+                       function editComment(commentId){
+                    var targetBtn =  document.getElementById(commentId);
+                    targetBtn.innerText = "Update";
+                    targetBtn.setAttribute('onclick', "updateComment("+commentId+")");
+                    var span = document.getElementById("c"+commentId);
+                    console.log(span);
+                    span.contentEditable = true;
+                       }
+                        function updateComment(commentId){
+                          console.log("function called");
+                           var updatedComment = document.getElementById("c"+commentId).innerText;
+                           console.log("updatedComment", updatedComment);
+                              var index = 0;
+                            while(index < comments.length){
+                                 if(comments[index].commentId == commentId){
+                                      comments[index].comment = updatedComment;
+                                 }
+                                 index++;
+                            }
+                            document.getElementById("c"+commentId).contentEditable = false;
+                            showComments();
+                        }
+                  // DOM - Document Object Model - API (Objects and functions) - document
+         </script>
+     </body>
+</html>

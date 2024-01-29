@@ -1,0 +1,112 @@
+Jump Statements: 
+break, continue, return 
+
+break: used to exit from the block.  usecase:we use break in switchcase to come out of switchblock.
+
+continue: used to skip an iteration.
+
+   for( var i=0; i<10;i++){
+                    if( i == 2 || i == 3){
+                        continue;
+                    }
+                    console.log(i);
+                 }
+
+ example:                
+
+var arr= ["user1","user2","user2","user3","user4","user4"];   duplicate values:user2 user4
+          
+var arr= ["user1","user2","user2","user3","user4","user4"]; 
+var tempArr = [];
+  for( var i=0; i<arr.length; i++){
+    
+     if(tempArr.includes(arr[i])){
+        continue;
+     }
+     tempArr.push(arr[i]);
+  }
+  
+  for(var z=0; z<tempArr.length;z++){
+    console.log(tempArr[z])
+  }
+
+return: used to exit from the function. 
+function f1(){
+                 if( 10 == 10){
+                    return;
+                 }
+                 console.log(10); 
+                 console.log(20);
+               }
+               f1()
+  example:
+               
+ function validate(username, password){
+                     if(username == "abc" && password == "abc"){
+                            return true;
+                     }
+                     else{
+                        return false;
+                     }
+                }
+              var result =  validate("ab1c","abc");
+              console.log(result);
+              
+Problem Statement: 
+Create a function that validates an OTP, if the provided OTP is correct, then 
+alert a message -> OTP Verified, if its incorrect -> alert -> incorrect OTP.
+
+              function validateOTP(otp){
+                 if(otp == 2344){
+                    return true;
+                 }
+                 else{
+                    return false;
+                 }
+               }
+              var result =  validateOTP(2344);
+               if(result){
+                alert("OTP Verified");
+               }
+               else{
+                alert("OTP incorrect");
+               }
+               out put: 2344 is correct 3465454 it is incorrect
+        
+Problem Statement: 
+Create a login form - username, password 
+capture username, password 
+create auth function which takes username, password and verifies, returns a boolean 
+value.
+based on boolean value, display an alert on the UI. 
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="username" placeholder="enter username">
+         <input type="text" id="password" placeholder="enter password">
+         <button onclick="login()">Login</button>
+ 
+           <script>
+              
+                    function login(){
+                       var username= document.getElementById("username").value;
+                       var password = document.getElementById("password").value;
+                      var result = auth(username,password);
+                      result ? alert("Login success"): alert("login failure");
+                    }
+                    function auth(username, password){
+                         if(username == "abc" && password == "abc"){
+                            return true;
+                         }
+                         else{
+                            return false;
+                         }
+                    }
+        
+           </script>
+     </body>
+</html>
+
+out put: abc esteyy login success
+         abc123 estayy login failure     

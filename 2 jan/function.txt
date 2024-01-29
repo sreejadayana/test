@@ -1,0 +1,90 @@
+Functions: 
+A function is a block of code , that takes an input (optional), process it and 
+provides some result.
+
+Syntax: 
+ function function_name(parameter){
+ // code 
+ }
+
+invocation:
+ function_name(arguments);
+  function f1(a,b){
+                       console.log(a); 
+                       console.log(b);
+                   }
+                   f1(10,20);   [10,20 are arguments]
+Note: Always make sure the function name is a verb.
+Javscript does not depend on parameters instead it depends only on the function name. 
+ function f1(a,b){
+                       console.log(a); 
+                       console.log(b);
+                       console.log(arguments);
+                       console.log(arguments[3]);
+                   }
+                   f1(10,20,30,40,50);
+In JS, if we have more than one function with same name, the latest function will 
+be invoked.
+  function f1(){
+                    console.log("x");
+                   }
+                   function f1(a,b){
+                     console.log(a,b);
+                   }
+                   f1();
+
+Anonymous functions: 
+A function without a name is known as Anonymous function.
+function x1(a){
+                          a();
+                  }
+                  x1(function(){
+                      console.log("anonymous function");
+                  });
+                  var arr= [10,20,30,40,50,60,70]; 
+                    for(var index = 0; index < arr.length; index++){
+                        console.log(arr[index]);
+                    }
+                    console.log("---------------------------------------------------"); 
+                     arr.forEach(function(arrayValue, x){
+                               console.log(arrayValue, x);
+                     });
+                     var arr2 =[1,0,22,3,23,4,6,100,6,200]; 
+                   var result =  arr2.sort(function(a,b){
+                          return a-b;
+                     })
+                     console.log(result);
+                     var result2 =  arr2.sort(function(a,b){
+                          return b-a;
+                     })
+                     console.log(result2);
+                     
+Function Expression: 
+If a variable refers a function / stores a function as a value, then it is called 
+as function expression.
+var arr= [10,20,30,40,50,60,70]; 
+                  var arr2 =[1,0,22,3,23,4,6,100,6,200]; 
+                  var arr3 =["hello","how","are","you"]; 
+                 var callback = function(arrayValue){ // function expression
+                               console.log(arrayValue);
+                     }
+                     
+                     arr.forEach(callback);
+                     console.log("-------------------------------")
+                     arr2.forEach(callback);
+                     console.log("-------------------------------")
+                     arr3.forEach(callback);
+                       callback = null;
+                     callback(10); // error 
+
+custom foreach: while do-while forloop and next coming to (for each)
+var arr= [10,20,30,40,50,60,70];
+                
+                   function easyIterator(callback){
+                         for(var i=0;i<arr.length;i++){
+                                callback(arr[i]);
+                         }
+                   }
+                   easyIterator(function(xyz){
+                         console.log(xyz);
+                   }) 

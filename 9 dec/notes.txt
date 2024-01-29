@@ -1,0 +1,278 @@
+1.Outline: 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+     </body>
+</html>
+
+2.Fonts: 
+Its really important to choose a right font and font families based on type of web page we are building. 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                 font-family: cursive;
+                 font-size: 25px;
+                
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+     </body>
+</html>
+
+3.HTML Links-CSS: 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                 font-family: cursive;
+                 font-size: 25px;
+            }
+            a{
+                text-decoration: underline;
+                text-decoration-color: brown;
+            }
+            a:link{
+                color:green
+            }
+            a:hover{
+                color:red
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <a href="index.html">Home</a>
+         <a href="login.html">Login</a>
+         <a href="read.html">Terms and Conditions</a>
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+          
+     </body>
+</html>
+
+4.HTML Lists - CSS: 
+<html>
+    <head>
+        <style>
+             ul{
+                list-style-image: url(l.jpg);
+             }
+        </style>
+    </head>
+     <body>
+ 
+            <ul>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                  <li>Item 4</li>
+                  <li>Item 5</li>
+            </ul>   
+          
+     </body>
+</html>
+
+Tables: 
+https://www.w3schools.com/css/css_table.asp::: link in Tables
+
+5.Combinators: 
+We have 4 Combinators.
+1.descendantselecor
+2.child selecctor
+3.adjacent selector
+4.general selector
+
+descendant selector (space): 
+ <html>
+    <head>
+         <style>
+                  div p{
+                    color:red
+                   }
+         </style>
+    </head>
+     <body>
+           <p> This is paragraph 1</p>
+           <p> This is paragraph 2</p>
+             <div>
+                 <p>This is paragraph 3</p>
+                 <p>This is paragraph 4</p>
+             </div>
+     </body>
+ </html>
+
+child selector (>) : 
+ <html>
+    <head>
+         <style>
+                  div > p{
+                    color:red
+                   }
+         </style>
+    </head>
+     <body>
+           <p> This is paragraph 1</p>
+           <p> This is paragraph 2</p>
+             <div>
+                 <p>This is paragraph 3</p>
+                 <p>This is paragraph 4</p>
+                  <section>
+                                   <p>This is paragraph 5</p>
+                                   <p>This is paragraph 6</p>
+                  </section>
+             </div>
+     </body>
+ </html>
+
+adjacent sibling selector (+): 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div + p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<h2>Adjacent Sibling Selector</h2>
+<p>The + selector is used to select an element that is directly after another specific element.</p>
+<p>The following example selects the first p element that are placed immediately after div elements:</p>
+<div>
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+</div>
+<p>Paragraph 3. After a div.</p>
+<p>Paragraph 4. After a div.</p>
+<div>
+  <p>Paragraph 5 in the div.</p>
+  <p>Paragraph 6 in the div.</p>
+</div>
+<p>Paragraph 7. After a div.</p>
+<p>Paragraph 8. After a div.</p>
+</body>
+</html>
+
+general sibling selector (~):
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div ~ p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<h2>Adjacent Sibling Selector</h2>
+<p>The + selector is used to select an element that is directly after another specific element.</p>
+<p>The following example selects the first p element that are placed immediately after div elements:</p>
+<div>
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+</div>
+<p>Paragraph 3. After a div.</p>
+<p>Paragraph 4. After a div.</p>
+<div>
+  <p>Paragraph 5 in the div.</p>
+  <p>Paragraph 6 in the div.</p>
+</div>
+<p>Paragraph 7. After a div.</p>
+<p>Paragraph 8. After a div.</p>
+</body>
+</html>

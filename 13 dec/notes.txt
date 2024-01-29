@@ -1,0 +1,64 @@
+Problem Statement: 
+Implement likes feature of facebook.
+
+Algorithm: 
+1. Get the like icon
+2. make the icon clickable 
+3. create a variable and initialize the value to 0. 
+4. Based on the click, increment the variable's value by 1. 
+5. Display the incremented value on the UI. 
+
+:in instragraem we search thumsup like button
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+     <body>
+          
+        <i onclick="likes()" class="fa fa-thumbs-up" style="font-size:48px;color:grey"></i> <span id="counter" style="font-size: 40px;">0</span>
+        <script>
+             var likesCount = 0; 
+                  function likes(){
+                    likesCount  = likesCount + 1; 
+                    document.getElementById("counter").innerText = likesCount;
+                  }
+        </script>
+     </body>
+</html>
+
+Variable Hoisting: 
+It is the process where the global variables and local variables are hoisted before 
+the execution. 
+All the global and local variables (in function) are declared to the top before the 
+execution of the code. 
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+     <body>
+        <script>
+                       var a=100;
+                      function f1(){
+                            console.log(a);  // 100
+                            a=9;
+                            var a=80;
+                            console.log(a); //80
+                      }
+                      f1();
+                      console.log(a); //  100 
+                      var x=90;                     
+                        //   var a,x;  // undefined,undefined
+                        //   a=100;
+                        //   function f1(){
+                        //     var a; // undefined
+                        //     console.log(a);  //  undefined
+                        //     a=9;
+                        //     a=80;
+                        //   }
+                        //   f1();
+                        //   console.log(a);  // 100 
+                        //   x=90
+        </script>
+     </body>
+</html>

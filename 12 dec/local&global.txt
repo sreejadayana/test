@@ -1,0 +1,71 @@
+JavaScript:
+
+JavaScript is a scripting language which can be used to develop dynamic front end web pages and also 
+write server side applications.
+
+Brendan developed JavaScript while working with Netscape company on a project (Netscape Navigator).
+
+Initally JS was called as LiveScript, then later changed the name to JavaScript. 
+
+ECMA (European Computers Manufacturers Association) standardized Javascript so JS can also be called as 
+ECMAScript (ES5,ES6,ES7).
+
+Variables: 
+Variables are identifiers to store / refer / identify some data / values. 
+
+syntax: 
+ var var_name = value; 
+ var age = 21; 
+ var username ="kiran123" 
+ var password= "djfvldfnvldnfv" 
+ var mobile = 9010101010
+
+Note: As a developer, if we want to know how far our logic is working, we can console log the intermediate 
+results. 
+
+console.log();
+  var name="digital lync"; 
+               var address= "Hitech City, Opp to Cyber Towers!";
+               console.log(name);
+               console.log(address);
+
+There are two types of variables.
+
+1. Local Variables : A variable that is enclosed in a function is known as local variable. 
+Local variables can be accessed only with in the function. 
+
+function login(){
+                    var username= "dl";  // Local variable
+                    var password= "lync"; // Local Variable
+                    console.log(username); 
+                    console.log(password);
+                  }
+                  login();
+                  console.log(username); // error
+
+2. Global Variables: 
+Any variable that is created outside of a function, then it is considered as global variable. 
+
+                   var x=100; //global variable 
+                   var y=200; // global variable. 
+                   function f1(){
+                       console.log(x);  // 100
+                       console.log(y); // 200
+                       x=900;
+                   }
+                    console.log(x); // 100
+                   f1();
+                   console.log(x); // 900
+                   
+Local and Global example: 
+
+var x=100;
+                   function f1(){
+                    var x=2;
+                       console.log(x);  // 2
+                       x=9; //
+                   }
+                    console.log(x); // 100
+                   f1();
+                   console.log(x); // 100
+

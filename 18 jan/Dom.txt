@@ -1,0 +1,181 @@
+Garbage Collection
+DOM
+Best Coding Practices
+
+
+Garbage Collection: 
+
+Any unused / unreferenced object is considered as garbage.
+
+Javascript runtime engine is responsible for garbage collection. 
+
+whenever the memory threshold is reached, then Javascript runtime engine calls 
+garbage collector to collect the garbage ( freeing of memory -> removing of unused / unreferenced objects). 
+
+However, to support GC, we need to write garbage collector friendly code. 
+
+var obj  = {
+     name: "kiran"
+}
+console.log(obj); 
+obj = null; 
+
+
+
+DOM:  Document Object Model 
+
+Using DOM, We can perform the following operations, 
+
+1. dynamically change the html elements 
+2. create new elements 
+3. remove elements 
+4. access elements and modify them
+5. add events dynamically. 
+
+Every html tag is considered as a html element according to DOM. 
+Every element will have (optional) attributes.
+
+Methods: 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+          <input type="text" id="username">
+          <p></p>
+          <h1 class="abc"></h1>
+         <script>
+
+             console.log(document.head);
+             console.log(document.body);
+            var username = document.getElementById("username");
+            console.log(username);
+            username.placeholder ="enter username";
+            username.size =40;
+
+           var p = document.getElementsByTagName("p");
+           console.log(p);
+           p[0].innerText = "Good Morning!";
+
+            // getElementsByName,getElementsByClassName, querySelector(),querySelectorAll()
+
+
+         </script>
+
+     </body>
+</html>
+
+events and listeners:
+
+<html>
+    <head>
+
+    </head>
+     <body>
+
+        <button class="abc">Greetings</button>
+
+         <button name="x"></button>
+         <script>
+                var abc = document.getElementsByClassName("abc");
+                console.log(abc);
+                abc[0].addEventListener("click", function(){
+                       alert("Good Morning!");
+                } )
+                
+                var x = document.getElementsByName("x");
+                console.log(x[0]);
+                x[0].innerText ="Hover on Me"; 
+                x[0].addEventListener('mouseover', function(){
+                    alert("Mouse over event is triggered");
+                })
+         </script>
+     </body>
+</html>
+
+navigation: 
+
+
+<html>
+    <head>
+
+    </head>
+     <body>
+          <p></p>
+         <script>
+              
+             var html = document;
+           html.body.firstChild.nextSibling.innerText= "Good Morning!";
+
+         </script>
+     </body>
+</html>
+
+
+creation and removal of elements. 
+
+<html>
+    <head>
+
+    </head>
+     <body>
+           <form id="form">
+
+           </form>
+         <script>
+             var input = document.createElement("input");
+               input.placeholder = "enter otp"; 
+               input.type ="text";
+               input.id="otp";
+
+               var button = document.createElement("button");
+                 button.innerText ="Submit"; 
+                 button.addEventListener("click", function(){
+                    event.preventDefault(); //IT WILL STOP THE REFRESH
+                          console.log(document.getElementById("otp").value);
+                 })
+
+                 var form = document.getElementById("form");
+                 form.appendChild(input); 
+                 form.appendChild(button);
+
+         </script>
+     </body>
+</html>
+
+
+for removal : use remove()
+
+Self Learning:  HTMLCollection vs NodeList
+
+Best Coding Practices: 
+
+1. Always follow naming conventions.
+
+            variables - noun  - follow camelCase
+            constants - noun - upper case 
+            functions - verb  - follow camelCase 
+
+2. Add minimal comments to the code. 
+
+3. Always write garbage collector friendly code. 
+
+4.  use === instead of  ==
+
+5. Always write JS code in seperate files. 
+
+6. Every function should not exceed more than 20 lines of code and also one function 
+should take only one responsibility. 
+
+7. JSLint to get warnings incase if we don't follow the best coding practices. 
+
+
+
+
+
+
+
+

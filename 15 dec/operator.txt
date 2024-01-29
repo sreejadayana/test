@@ -1,0 +1,28 @@
+
+
+Operators: 
+An Operator is a special symbol / keyword which provides some functionality. 
+javascript provides different types of operators.
+
+1. Arithmetic Operators: 
++,-, *, /(quotient), %(remainder), ++, -- 
+ var a=100; 
+                 ++a; // preincrement
+                 console.log(a);
+                 a++; // post increment 
+                 console.log(a);
+                  
+                 --a; // pre decrement
+                 console.log(a);
+                 a--;  // post decrement
+                 console.log(a); // 
+  var a=100, b=200, c="800", d="hello"; 
+                 console.log(a+c+b); // ? n + s = s  = 100800200 
+                 console.log(c+a+b);
+                 console.log(a+b+c);
+                 console.log(a-c);
+                 console.log(a * c);
+                 console.log(a - d);
+
+2.Comparision Operators: results in  boolean value. 
+>,<,>=,<=,==,===,?:, !=

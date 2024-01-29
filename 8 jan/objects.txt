@@ -1,0 +1,240 @@
+Objects: Objects is a key-value pair
+
+syntax: 
+var obj = {
+    key : value, 
+    key : value,
+    .
+    .
+    .
+}
+key should be a string and should be unique
+value can be of any type and need not to be unique. 
+Methods of Objects:
+create: to create a new object from the existing object. 
+ var bank= {
+                    bank_name: "ICICI", 
+                    ifsc: "ICIC0897999", 
+                    branch: "Hitech City"
+                   }
+                  var employee = Object.create(bank);
+                  console.log(employee.bank_name);
+                  employee.name= "Kiran";
+                  employee.role="admin"; 
+                  console.log(employee);
+ 
+ 
+ freeze: 
+  var config = Object.freeze({
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     });
+                     config.port = 6777;
+                     config.username= "mbsdjd"
+                     delete config.host;
+                     console.log(config);
+
+keys and values: 
+ var config ={
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     };
+                   console.log(Object.keys(config));
+                   console.log(Object.values(config));
+
+seal: The seal function allow only updation of value of a key in the object.
+  var config = Object.seal({
+                            host: "www.digital-lync.com", 
+                            port:9011, 
+                            ipaddress:"901.11.24.12", 
+                            publickey: "JVSDHCJBSD"
+                     });
+                      config.port= "8888"; 
+                   
+                     console.log(config);
+
+this: 
+this is a keyword that refers to the current object.
+  var employee = {
+                      name: "kiran", 
+                      address: "hyderabad", 
+                      getDetails: function(){
+                        
+                                    return this.name + "\t"+ this.address
+                      }
+                  }
+                  var employee2= {
+                      name:"raj", 
+                      address: "banglore",
+                      
+                  }
+                  var employee3= {
+                      x: function(){
+                      }
+                  }
+                   console.log(employee.getDetails.call(employee2)); // this -> employee2
+                   console.log(employee.getDetails()); // this -> employee
+
+Problem Statement: 
+Implement simple banking system with the following features. 
+1. fund transfer
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+          function Customer(cid, name,accno,balance){
+                this.custId = cid;
+                this.name=name;
+                this.acno=accno;
+                this.balance= balance;
+          }
+          Customer.prototype.fundTransfer =function(reciever,amount){
+                          reciever.balance = reciever.balance + amount;
+                          this.balance = this.balance - amount;
+                }
+                Customer.prototype.checkBalance =function(){
+                                     return this.balance;
+                }
+            Customer.prototype.bankname= "ICICI";
+         var c1= new Customer(101, "kiran",10001, 90000);
+         var c2= new Customer(102, "raj",10002, 900000);
+         var c3= new Customer(103, "naveen",10003, 900);
+            c1.fundTransfer(c3,50000);
+            console.log(c1.checkBalance());
+            console.log(c3.checkBalance());
+            console.log(c1);
+    
+         
+            
+ 
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+Based on the array of objects, prepare a dynamic table using javascript.
+var users= [
+    {
+         username: "kiran", 
+         email: "kiran@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer"
+    },
+     {
+         username: "naveen", 
+         email: "naveen@gmail.com", 
+         department: "Development", 
+         designation:"Senior Software Engineer"
+    },
+     {
+         username: "Rajesh", 
+         email: "rajesh@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer"
+    },
+     {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist"
+    }
+]
+<html>
+    <head>
+    </head>
+     <body>
+         <table width="100%" border="1">
+              <thead id="thead">
+              </thead>
+               <tbody id="tbody">
+               </tbody>
+         </table>
+         <script>
+         
+         
+var users= [   
+    {
+         username: "kiran", 
+         email: "kiran@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer", 
+         id:101, 
+         gender:"male"
+    },
+     {
+         username: "naveen", 
+         email: "naveen@gmail.com", 
+         department: "Development", 
+         designation:"Senior Software Engineer",
+         id:102,
+         gender:"male"
+    },
+     {
+         username: "Rajesh", 
+         email: "rajesh@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer",
+         id:103,
+         gender:"male"
+    },
+     {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:104,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:105,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:106, 
+         gender:"male"
+    }
+]
+  var user = users[0];
+  var tableHeaders = Object.keys(user);
+  console.log(tableHeaders);
+   var tableHeaderContent = ""; 
+     tableHeaders.forEach(function(key){
+          tableHeaderContent = tableHeaderContent + "<th>"+ key+"</th>"
+     })
+     console.log(tableHeaderContent);
+     document.getElementById("thead").innerHTML = tableHeaderContent
+    
+     var tableBodyContent= ""; 
+        users.forEach(function(user){
+                   var values =  Object.values(user);
+                   var trow = "<tr>" + convertValuesToRowItems(values)  +"</tr>";
+                   tableBodyContent = tableBodyContent + trow;
+        })
+        console.log(tableBodyContent);
+        document.getElementById("tbody").innerHTML = tableBodyContent;
+         function convertValuesToRowItems(values){
+            var finalContent = ""; 
+            values.forEach(function(value){
+                   finalContent = finalContent + "<td>"+ value + "</td>";
+            })
+            return finalContent;
+         }
+         </script>
+     </body>
+</html>
+Pending Items: 
+Strings, Regular Expressions, Advanced validations, error handling, 
+debugging, best coding practices, DOM. 

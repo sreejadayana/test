@@ -1,0 +1,190 @@
+Colors: 
+CSS provides color property to provide color to html element. 
+<html>
+    <head>
+         <style>
+             h1{
+                  /* color:rgba(29, 203, 153,0.3); */
+                  color:#006666;
+                  text-align: center;
+             }
+         </style>
+         
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+     </body>
+</html>
+
+Background: 
+background-color:
+<html>
+    <head>
+         <style>
+             h1{
+                  /* color:rgba(29, 203, 153,0.3); */
+                  color:#006666;
+                  text-align: center;
+                  background-color: black;
+             }
+         </style>
+         
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+     </body>
+</html>
+
+background image:
+<html>
+    <head>
+         <style>
+                  body{
+                    background-image: url("bgimage.png");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                  }
+           
+         </style>
+         
+    </head>
+     <body>
+         <h1 style="color:rgb(249, 212, 4); margin-left:420px">Wedding Invitation</h1>
+          <h2 style="color:whitesmoke; margin-left: 321px;">Someone is invition someone on someone's wedding</h2>
+     </body>
+</html>
+<html>
+    <head>
+         <style>
+                  body{
+                    /* background-image: url("fp.png"); */
+                    /* background-repeat: no-repeat; */
+                    /* background-size: 261px 281px; */
+                    /* background-position: top right; */
+                    /* background-attachment: fixed; */
+                    background:  url("fp.png") no-repeat  top right fixed;
+                    background-size: 261px 281px;
+                    
+                  }
+           
+         </style>
+         
+    </head>
+     <body>
+         
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <
+       
+     </body>
+</html>
+
+Task: Create a web page for a university.
+1. have a background image to show the university
+2. In the center of the bg image, create a login form aligned properly.

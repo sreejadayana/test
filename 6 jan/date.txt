@@ -1,0 +1,110 @@
+Date: 
+Javascript provides Date object to work with date. 
+var date =  new Date();
+                 console.log(date);
+                  console.log(date.getDate());
+                  console.log(date.getMonth());
+                  console.log(date.getFullYear());
+                  console.log(date.getHours());
+                  console.log(date.getMinutes());
+                  console.log(date.getSeconds()); 
+
+Problem Statement: 
+Display a running digital clock on the UI using Date object.
+
+<html>
+    <head>
+         <style>
+              h1{
+                font-family: Copperplate, Papyrus, fantasy;
+                font-size:60px;
+                color:red;
+                border: black 10px solid;
+                margin-left:420px;
+                margin-right: 490px;
+                padding:4px;
+                background-color: whitesmoke;
+                outline: 14px grey solid;
+              }
+         </style>
+    </head>
+     <body>
+      
+            <h1 id="time"></h1>
+         
+         <script>
+                setInterval(function(){   //setinterval means clock run avutha undhi
+                    var date = new Date(); 
+            var time = concatZero(date.getHours()) +":"+ concatZero(date.getMinutes())+":"+ concatZero(date.getSeconds());
+            document.getElementById("time").innerText = time;
+                },1000);
+                function concatZero(input){
+                     if(input < 10){
+                           input = "0"+ input;
+                     }
+                     return input;
+                }
+                 
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+
+Create a clock that displays AM and PM based on the hours.
+<html>
+    <head>
+         <style>
+              h1{
+                /* font-family: Copperplate, Papyrus, fantasy; */
+                font-size:60px;
+                font-weight: bolder;
+                color:red;
+                border: black 10px solid;
+                margin-left:460px;
+                margin-right: 470px;
+                padding:4px;
+                background-color: whitesmoke;
+                outline: 14px grey solid;
+              }
+         </style>
+    </head>
+     <body>
+            <h1 id="time"></h1>
+         <script>
+                setInterval(function(){
+                    var date = new Date(); 
+                    console.log(date);
+            var time = concatZero(fetchHours()) +":"+ concatZero(date.getMinutes())+":"+ concatZero(date.getSeconds())+" "+ fetchMeridien();//fetchMeridienserach in google
+            document.getElementById("time").innerText = time;
+                },1000);
+                function concatZero(input){
+                     if(input < 10){
+                           input = "0"+ input;
+                     }
+                     return input;
+                }
+                function fetchMeridien(){
+                     var date = new Date(); 
+                     var hours =  date.getHours();
+                     if(hours <12){
+                        return "AM"
+                     }
+                     else{
+                        return "PM"
+                     }
+                }
+                function fetchHours(){
+                    var date= new Date(); 
+                    var hours = date.getHours();
+                     if(hours > 12){
+                         hours = hours - 12
+                     }
+                     return hours;
+                }
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+Implement Data , time system of Facebook.(virtual desktop interface vdi) they will give u lp

@@ -1,0 +1,72 @@
+Arrays:  an array is a linear data structure and used to store data in a sequential order
+methods:
+var array = [10,20,30,40,50]; 
+                  array.push(60);
+                  console.log(array);
+                  array.unshift(5); 
+                  console.log(array);
+                   var index = array.indexOf(20);
+                   console.log(index);
+                   array.splice(index,0,15);
+                   console.log(array);
+                   var index50 = array.indexOf(50);
+                    array.splice(index50,1);
+                    console.log(array);
+                 
+foreach vs filter vs map (imp inteview question)
+PS: 
+ var array = [0,1,0,0,10,20,30,40,50]; 
+ MULTIPLY EACH ELEMENT BY 3 and display the resultant array. 
+ arr = [0,3,0,0,30,60,90,120,150]
+var arr=[0,1,0,0,10,20,30,40,50];
+            
+            // arr.forEach(function(value,index){
+            //     arr[index]= value*3;
+                
+            // })
+            // console.log(arr);
+     arr = arr.map(function(value){
+               return value * 3;
+     })
+     console.log(arr); 
+
+PS:  Create a function that accepts an array, datatype. Filter the data from 
+the array based on the given datatype and return the new array,   display the 
+new array on the console. 
+
+var arr= [100,200,"java","dotenet","react","angular"];
+  function x(arr, y){
+  }
+  var result = x(arr,'number')
+  console.log(result); [100,200]
+<html>
+    <head>
+    </head>
+     <body>
+         <script>
+var arr= [100,200,"java","dotenet","react","angular"];
+  function x(arr, y){
+          var res = arr.filter(function(value){
+                  return  typeof value == y
+           })
+           return res;
+  }
+  var result = x(arr,'number')
+  console.log(result); 
+         </script>
+     </body>
+</html>     op:100,200 number    java donet react angular:string
+
+Problem Statement: 
+var arr= [10,20,30,10,10,20,30,20,10,20,10,10];
+Collapse
+
+
+
+
+
+
+
+
+
+

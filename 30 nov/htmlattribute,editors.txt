@@ -1,0 +1,124 @@
+HTML Attributes: 
+An Attribute is a key-value pair that enhances the capability of a html 
+element. 
+<input type="date">
+type = "date" is an attribute which makes the input field as a calander. 
+We can categorize HTML attributes in to 3 types. 
+
+1. element specific : these attributes are created only for that respective element
+which means it can be used with only that element.
+
+<html>
+    <head>
+    </head>
+     <body>
+         <img src="dl.png" alt="Image is n/a">
+          <a href="abc.html">Hello</a>
+        
+     </body>
+</html>
+
+2. global : These attributes are not specific to any element which means we can 
+use these attributes with any element.
+Attribute   Description
+accesskey   Specifies a shortcut key to activate/focus an element
+class   Specifies one or more classnames for an element (refers to a class in a style sheet)
+contenteditable Specifies whether the content of an element is editable or not
+data-*  Used to store custom data private to the page or application
+dir Specifies the text direction for the content in an element
+draggable   Specifies whether an element is draggable or not
+enterkeyhint    Specifies the text of the enter-key on a virtual keybord
+hidden  Specifies that an element is not yet, or is no longer, relevant
+id  Specifies a unique id for an element
+inert   Specifies that the browser should ignore this section
+inputmode   Specifies the mode of a virtual keyboard
+lang    Specifies the language of the element's content
+popover Specifies a popover element
+spellcheck  Specifies whether the element is to have its spelling and grammar checked or not
+style   Specifies an inline CSS style for an element
+tabindex    Specifies the tabbing order of an element
+title   Specifies extra information about an element
+translate   Specifies whether the content of an element should be translated or not
+<html>
+    <head>
+    </head>
+     <body>
+        <h1 title="Click to Visit Digital lync" style="text-align: center;color:teal">Digital Lync Technologies</h1>
+         <p title="Click to get the map" style="text-align: center; color:darkslategray; font-family: cursive;">Opp to Cyber Tower, Hitech City</p>
+         <h3 title="Click to call" style="text-align: center;color: red;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Contact #0000000000</h3>
+     </body>
+</html>
+
+3. event : These attributes are similar to global attributes. however, the 
+event attributes are used to communicate with javascript.
+Any action is considered as an event.
+whenever an event happens there should be an event handler. 
+HTML provides some attributes that can handle events. These attributes starts 
+with 'on'. 
+<html>
+    <head>
+    </head>
+     <body>
+         <button onclick="login()">Login</button>
+         <script>
+             function login(){
+                  alert("hello!");
+             }
+         </script>
+     </body>
+</html>
+
+Problem Statement: 
+Restrict the user from pasting content on a text field.
+<html>
+    <head>
+    </head>
+     <body oncontextmenu="return false">
+         <input onpaste="return false" type="text">
+     </body>
+</html>
+
+HTML Editors: 
+Notepad 
+Notepad++
+Sublime 
+Atom 
+Visual Studio Code ( Recommended)
+brackets
+ 
+HTML Document Structure: 
+
+<html>
+    <head>
+        <!--Title-->
+        <title>Digital Lync</title>
+ 
+         <!-- fav icon-->
+          <link rel="icon" type="image/png" href="dl.png">
+
+          <!-- Internal CSS-->
+           <style>
+                    h1{
+                        text-align: center;
+                    }
+           </style>
+           
+           <!--Meta Tags-->
+           <meta http-equiv="refresh" content="1112">
+
+            <!-- Script-->
+            <script>
+                alert("Hello!");
+            </script>
+            
+            <!-- Link other css-->
+             <link rel="stylesheet" href="style.css">
+    </head>
+     <body>
+         <h1>Nov 30, 2023</h1>
+         <h1>scvkjsdbckjsdbkj</h1>
+         <script>
+              alert("from body");
+         </script>
+     </body>
+</html>

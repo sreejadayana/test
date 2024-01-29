@@ -1,0 +1,57 @@
+Comparision Operators: results in  boolean value. 
+>,<,>=,<=,==,===,?:,!=
+           // >,<,>=,<=,==,===,?:,!= 
+           
+           var a=10, b=20, c="10", d=10, e="10s"; 
+           console.log(a > b);
+           console.log(a < b);
+           console.log( a >= d);
+           console.log(a == c); // == checks only for content
+           console.log(a === c); // === checks for content and datatype
+            console.log(a == e); //
+           console.log(a < b ? "a is less than b": "a is greater than b");
+           console.log( a != e);
+           <condition> ?  <true block> : <false block> 
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="email" placeholder="enter email">
+          <button onclick="send()">Send</button>
+        <script>
+                   function send(){
+                     var userEmail = "sai@digital-lync.com"; 
+                    var email = document.getElementById("email").value;
+        userEmail == email ? alert("email sent"): alert("email id not registered"); 
+                   }
+        </script>
+     </body>
+</html>
+
+Logical Operators: 
+&&(AND), ||(OR), !(NOT) 
+ var a=10, b=20, c=30; 
+                  console.log(a < b && a < c);
+                  console.log(a > b && a < c);
+                  console.log(a > b || a < c); 
+                  console.log(a > b || a > c); 
+                  console.log(!(a > b || a > c)); 
+                  console.log(!(a < b && a < c));
+<html>
+    <head>
+    </head>
+     <body>
+         <input type="text" id="email" placeholder="enter email">
+         <input type="text" id="password" placeholder="password here">
+          <button onclick="login()">Login</button>
+        <script>
+                   function login(){
+                    var userPassword="Sai123";
+                     var userEmail = "sai@digital-lync.com"; 
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+        userEmail == email && password ==  userPassword ? alert("login success"): alert("login failure"); 
+                   }
+        </script>
+     </body>
+</html>

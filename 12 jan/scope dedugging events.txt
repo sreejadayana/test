@@ -1,0 +1,160 @@
+Scopes, Debugging and Events 
+Error Handling
+Garbage Collection
+DOM
+Best Coding Practices
+
+
+Debugging: It is process of finding the code that raised an issue / bug. 
+
+Scopes: 
+
+In JS, we have 2 scopes, 
+
+1. Local Scope :
+
+This gets created when a function is in execution. All the local variables are 
+created in the local scope only.
+
+2. Global Scope: 
+
+This gets created as soon as the application is deployed on to the browser. 
+
+All the global variables and predefined functions are available in global scope. 
+
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+                   var a=100; 
+                   var b=200;  // Global Scope
+
+                   function f1(){
+
+                    var x=20; // Local Scope
+                    var y = 10; 
+                    console.log(x);
+                    console.log(y);
+                   }
+
+                   f1();
+                   console.log(a); 
+                   console.log(b);
+
+
+         </script>
+
+     </body>
+</html>
+
+
+Events: 
+
+Any action is considered as an event. 
+
+whenever an event occurs, there should be an event handler. 
+
+JS provides different types of events based on the requirement. 
+
+HTML communicates with javascript using events. 
+
+ex: onclick, onchange, onclear, onmouseover, onmouseout, onsubmit,onkeyup....
+
+
+Problem Statement: 
+
+Highlight the image based on user hover on it. 
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <img id="iphone" onmouseover="zoom()" onmouseout="unzoom()" src="iphone.jpg">
+
+         <script>
+
+                   function zoom(){
+                       var iphone =  document.getElementById("iphone");
+                       iphone.style.width="230";
+                       iphone.style.height="240";
+                   }
+
+                   function unzoom(){
+                    var iphone =  document.getElementById("iphone");
+                       iphone.style.width="225";
+                       iphone.style.height="225";
+                   }
+
+         </script>
+
+     </body>
+</html> 
+
+Ref: https://www.w3schools.com/jsref/dom_obj_event.asp 
+
+Error Handling:
+
+Whenever an error occurs in the code, the application gets crashed.
+
+in error handling we have two blocks one is try and another one is catch
+basically write the code inside the block.
+
+we can write the code inside the block if any error is occured. it will goes to catch block.so the catch block will catch the error
+ 
+ it will not stop the execution
+
+<html>
+    <head>
+
+    </head>
+
+     <body>
+
+         <script>
+
+                 var user; 
+                 function fetchData(){
+                     // Talk to backend and get user data 
+
+                    //  user = {
+                    //      name: "kiran"
+                    //  }
+                 }
+                 fetchData(); 
+                 try{
+                  if(user.name == "kiran"){
+                        console.log("valid user")
+                  }
+                  else{
+                    console.log("invalid user")
+                  }
+                }
+                catch(error){
+                     console.log(error);
+                }
+                finally{
+                    user = null;
+                }
+                
+                  var names = ["abc","jsd","fdlksdv"]; 
+
+                  console.log(names);
+
+         </script>
+
+     </body>
+</html>
+
+
+
+Custom Error Messages: 
+

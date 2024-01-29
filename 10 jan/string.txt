@@ -1,0 +1,177 @@
+Strings: 
+
+Strings are immutable which means once you create a string, we cannot modify them. 
+however, if we want to reassign a new value, then its possible.
+
+ var str1= "digital"; 
+                  var str2= "lync"; 
+                 str1= str1.concat(str2); 
+                  console.log(str1); //  
+
+Javascript provides different types of predefined methods on string operations. 
+
+
+ var str1= "digital lync"; 
+                  console.log(str1.toUpperCase());
+                  console.log(str1.endsWith("l"));
+                  console.log(str1.startsWith("x"));
+                  console.log(str1.includes("at"));
+                  console.log(str1.indexOf("d"));
+                  console.log(str1.replace("di","he"));
+                  console.log(str1.split(" ")); 
+                  console.log(str1.bold());
+                  console.log(str1.italics());
+                  document.write(str1.bold()); 
+                  document.write(str1.italics()); 
+                  document.write(str1.link("https://www.facebook.com")); 
+
+
+Problem Statement: 
+
+var str = "hello how are you doing"; 
+
+reverse the string. 
+
+gniod uoy era woh olleh 
+
+
+
+ var str = "hello how are you doing";
+       var revStr= "";
+
+        for(var i=str.length-1; i > 0; i--){
+              revStr =  revStr + str[i];
+        }
+        console.log(revStr) 
+
+        //gniod uoy era woh olle
+                 
+Problem Statement: 
+
+var str = "hello how are you doing"; 
+
+Reverse the word in the same place. 
+
+   olleh woh era uoy gniod 
+
+
+   var str = "hello how are you doing";
+        
+           var splitarr = str.split(" ");
+           console.log(splitarr);
+          
+         var res =  splitarr.map(function(word){
+            var revStr = "";
+             for(var i=word.length-1; i >= 0; i--){
+              revStr =  revStr + word[i];
+             }    
+             return revStr;      
+           })
+
+           console.log(res);
+           console.log(str);
+              str = res.join(" ");
+              console.log(str);
+
+
+alternate:
+
+
+ var str = "hello how are you doing";
+           var splitarr = str.split(" ");
+           console.log(splitarr);
+           var finalStr = "";
+           for(var x=0; x<splitarr.length; x++){
+                  var word = splitarr[x];
+                  var temp = "";
+                  for(var y = word.length - 1; y >= 0; y--){
+                           finalStr = finalStr + word[y];
+                  }
+                  finalStr = finalStr + " "
+           }
+           console.log(str);
+           console.log(finalStr);
+
+
+Validations:
+
+
+Problem Statement: 
+
+Create a password field with the following constraints. 
+
+1. password should be atleast 8 chars 
+2. atleast 1 uppercase 
+3. atleast 1 lowercase 
+4. atleast 1 digit 
+5. atleast 1 special character 
+
+
+
+
+<html>
+    <head>
+    </head>
+     <body>
+
+         <input type="text" id="password" onkeyup="verify()"> <span id="msg" style="color:red"></span>
+
+        <script>
+
+              var msg = document.getElementById("msg");
+                 function verify(){
+                   var password =  document.getElementById("password").value;
+
+                   console.log(password);
+                    if(password.length < 8){
+                           msg.innerText = "Password should be atleast 8 chars";
+                           return;
+                    }
+                    else{
+                        msg.innerText = "";
+                    }
+                    if(checkForUpperCase(password)){
+                        msg.innerText = "";
+                    }
+                    else{
+                        msg.innerText = "Password should have atleast 1 upper case";
+                    }
+                 }
+
+                 function checkForUpperCase(str){
+                    var isFound = false; 
+
+        var UC = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+                    for(var i=0;i<str.length; i++){
+                              if(UC.includes(str[i])){
+                                isFound= true;
+                                break;
+                              }
+                    }
+                    return isFound;
+                 }
+
+
+
+
+
+
+      /*
+      1. password should be atleast 8 chars 
+2. atleast 1 uppercase 
+3. atleast 1 lowercase 
+4. atleast 1 digit 
+5. atleast 1 special character 
+
+https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+      */
+
+        
+
+         </script>
+     </body>
+</html>
+
+
+

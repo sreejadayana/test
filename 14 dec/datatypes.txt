@@ -1,0 +1,117 @@
+Data types: 
+JS is developed as weakly typed language.
+
+ var isDone = false; 
+                    isDone = "HELLO"; 
+                    console.log(typeof isDone);
+---------------------------------------------------------------------
+var var_name = value; 
+var a=100; // number
+var a= "hello"; // string
+
+We can categorize datatypes into 2 types. 
+
+1. Primitive Types :  number, boolean, string
+
+1. number: represents a number eg:100
+                      var age = 21; 
+                      console.log(typeof age);
+                      var rating = 4.123; 
+                      console.log(typeof rating);
+                      var mobile = 9010101010; 
+                      console.log(typeof mobile);
+                       if(typeof mobile == "number"){
+                                console.log("processing..")
+                       }
+                       else{
+                               console.log("incorrect format");
+                       }
+
+2.boolean:  rep a boolean either true are flase
+                       var isDone = true; 
+                       var isUserLoggedIn = false; 
+                       console.log(typeof isDone);
+                       console.log(typeof isUserLoggedIn);
+                       var isFinished = 1; 
+                       console.log(typeof isFinished); // 
+   
+                       var isUserLoggedIn = true; 
+                        if(isUserLoggedIn){
+                             console.log("redirect to home page");
+                        }
+                        else{
+                                 console.log("redirect to login page");
+                        }
+                  
+ 3.String:  represents seq of char eg:"hello"
+
+ 
+ <html>
+    <head>
+    </head>
+     <body>
+         <script>
+                var username= 'kiran123'; 
+                var password = "ksbdckjsdbckjb";
+                console.log(typeof username); 
+                console.log(typeof password); 
+                console.log(username.toUpperCase().concat("@GMAIL.COM").length);
+                   
+         </script>
+     </body>
+</html>
+
+2. Non Primitive Types: arrays and objects 
+
+Arrays: 
+An Array is a linear data structure which is used to store data in a sequential order. 
+
+syntax: 
+var arr= [10,20,304,40,50];
+in JS, Arrays are dynamic and also accepts different types of values in the array. 
+JS provides lot of predefined functions to work with arrays.
+syn: var arr=[10,20,30,40,50]
+
+ var array = [10,20,30,true,false,"hello","how"];
+              console.log(array[2]);
+              console.log(array[5]);
+              console.log(array[8]);
+                array.pop(); //remove the last element
+                array.pop();
+                array.shift();
+                
+                console.log(array); 
+
+Objects: 
+A javascript object is used to store the data in key value pair format. 
+
+syntax: 
+var object = {
+      key : value, 
+      key: value
+}
+  var user = {
+                    firstname: "kiran", 
+                    lastname: "kumar", 
+                    age: 21, 
+                    location: "hyderabad", 
+                    languages: ["telugu","hindi","english"]
+               }
+                console.log(user.firstname);
+                console.log(user.languages);
+                console.log(user.uid);
+                user.firstname = "Kiran K"; 
+                console.log(user);
+                delete user.lastname;
+                console.log(user);
+                user.pincode = 90001; 
+                console.log(user); 
+
+Problem Statement: Create a product object with 5 key value pairs. 
+                            objects example:var product={ productname:"devices",
+                                 quality:100,
+                                 durationYeras:10,
+                                 feauters:"available",
+                                 battry:"avaliable"
+        }
+                   console.log(product);

@@ -1,0 +1,245 @@
+HTML Headings: 
+HTML provides different types of headers to represent on a web page.
+h1 - h6. 
+<html>
+    <head>
+    </head>
+     <body>
+        
+          <h1>Header 1</h1>
+          <h2>Header 2</h2>
+          <h3>Header 3</h3>
+          <h4>Header 4</h4>
+          <h5>Header 5</h5>
+          <h6>Header 6</h6>
+     </body>
+</html>
+
+HTML Paragraphs: 
+Tag: <p>
+If have any Paragraph content to be displayed on the UI. wrap it under <p> tag.
+<html>
+    <head>
+    </head>
+     <body>
+          <p>This is some text</p>
+     </body>
+</html>
+
+HTML Styles: 
+html provides style attribute to support CSS. 
+<html>
+    <head>
+    </head>
+     <body>
+          <p style="text-align: center;font-size: 100px;">This is some text</p>
+     </body>
+</html>
+
+HTML Comments: 
+HTML comments are used to provide some additional infomation to the code readers 
+on the code.
+syntax: 
+<!--   comment   -->
+<html>
+    <head>
+        <!--Title-->
+        <title>Digital Lync</title>
+ 
+         <!-- fav icon-->
+          <link rel="icon" type="image/png" href="dl.png">
+          <!-- Internal CSS-->
+           <style>
+                    h1{
+                        text-align: center;
+                    }
+           </style>
+           
+           <!--Meta Tags-->
+           <meta http-equiv="refresh" content="1112">
+            <!-- Script-->
+            <script>
+                alert("Hello!");
+            </script>
+            <!-- Link other css-->
+             <link rel="stylesheet" href="style.css">
+    </head>
+     <body>
+         <h1>Nov 30, 2023</h1>
+         <h1>scvkjsdbckjsdbkj</h1>
+         <script>
+              alert("from body");
+         </script>
+     </body>
+</html>
+
+HTML Blocks: 
+According to HTML, there are 2 types of elements.
+1. Block level : If an element starts in a new line and occupies the complete 
+width,then it is considered as block level element.
+2. Inline: If an element starts in the same line and occupies only content level 
+width then it is considered as inline element.
+<html>
+    <head>
+    </head>
+     <body>
+         <h1>This is a header </h1> 
+          <!-- block level element-->
+         <h2 style="background-color: green;">This is another header</h2>
+         <p style="background-color: red;">This is some paragraph!</p>
+         <!-- inline element-->
+         <a style="background-color: gray;" href="home.html">Home</a>
+          <input type="password">
+          <span>This is a span!!</span>
+          <ul>
+            <li>abc</li>
+          </ul>
+     </body>
+</html>
+<html>
+    <head>
+    </head>
+     <body>
+         <p>This is a paragraph!</p> 
+          <input>
+         <span style="margin-left:130px">This is a span</span>
+         <span>abc</span>
+         <span>xyz</span>
+         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+           <br> <br> <br> <br> <br> <br> <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+     </body>
+</html>
+
+ HTML Classes: 
+ HTML provides 'class' attribute to support CSS.
+ <html>
+    <head>
+         <style>
+            .theme1{
+                 color:green;
+                 background-color: red;
+                 font-size: 40px;
+                 font-family: cursive;
+            }
+         </style>
+    </head>
+     <body>
+        <p class="theme1">This is some paragraph!!</p>
+        
+     </body>
+</html>
+HTML Ids: 
+<html>
+    <head>
+    </head>
+     <body>
+       <input type="text" id="username">
+       <input type="password" id="password">
+       <input type="text" id="email">
+        
+     </body>
+</html>
+
+HTML Tables: 
+Tag:  <table>
+Ref: https://www.w3schools.com/html/html_table_headers.asp
+<html>
+    <head>
+         <style>
+               .bench{
+                 background-color: lightsalmon;
+                 font-weight: bold;
+               }
+               .benchAssign{
+                background-color: red;
+                color:white
+               }
+               .inProject{
+                background-color: green;
+                color:white
+               }
+         </style>
+    </head>
+     <body>
+         <table border="1" width="100%">
+             <thead style="background-color: yellow;">
+                     <th>Sno</th>
+                     <th>Name</th>
+                     <th>Designation</th>
+                     <th>Project</th>
+                     <th>WFH / WFO</th>
+                     <th>Experience</th>
+                      <th>Action</th>
+             </thead>
+             <tbody style="text-align: center;">
+                  <tr>
+                       <td>1</td>
+                       <td>Naveen Kumar</td>
+                       <td>Full Stack Developer</td>
+                       <td>CRM</td>
+                       <td>WFO</td>
+                       <td>8</td>
+                       <td><button disabled class="inProject">Assign</button></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Rajesh Kumar</td>
+                    <td>QA</td>
+                    <td>CRM</td>
+                    <td>WFO</td>
+                    <td>2</td>
+                    <td><button disabled class="inProject">Assign</button></td>
+               </tr>
+               <tr>
+                <td>3</td>
+                <td>Krishna Kumar</td>
+                <td>Support Executive</td>
+                <td>CRM</td>
+                <td>WFH</td>
+                <td>1</td>
+                <td><button disabled class="inProject">Assign</button></td>
+           </tr>
+             
+           <tr class="bench">
+            <td>4</td>
+            <td>Ravi</td>
+            <td>Full Stack Developer</td>
+            <td>On Bench</td>
+            <td>WFH</td>
+            <td>6</td>
+            <td><button class="benchAssign">Assign</button></td>
+             </tr>
+             <tr class="bench">
+                <td>5</td>
+                <td>John</td>
+                <td>Full Stack Developer</td>
+                <td>On Bench</td>
+                <td>WFH</td>
+                <td>3</td>
+                <td><button class="benchAssign">Assign</button></td>
+                 </tr>
+                 <tr class="bench">
+                    <td>6</td>
+                    <td>Mike</td>
+                    <td>Front End Developer</td>
+                    <td>On Bench</td>
+                    <td>WFH</td>
+                    <td>3</td>
+                    <td><button class="benchAssign">Assign</button></td>
+                     </tr>
+                     <tr>
+                        <td>7</td>
+                        <td>Stella</td>
+                        <td>Front End Developer</td>
+                        <td>LMS</td>
+                        <td>WFO</td>
+                        <td>3</td>
+                        <td><button disabled class="inProject">Assign</button></td>
+                         </tr>
+             </tbody>
+         </table>
+        
+     </body>
+</html>

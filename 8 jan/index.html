@@ -1,0 +1,92 @@
+<html>
+    <head>
+    </head>
+     <body>
+         <table width="100%" border="1">
+              <thead id="thead">
+              </thead>
+               <tbody id="tbody">
+               </tbody>
+         </table>
+         <script>
+         
+         
+var users= [
+    {
+         username: "sreeja", 
+         email: "sreeja@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer", 
+         id:101, 
+         gender:"male"
+    },
+     {
+         username: "dayana", 
+         email: "dayan@gmail.com", 
+         department: "Development", 
+         designation:"Senior Software Engineer",
+         id:102,
+         gender:"male"
+    },
+     {
+         username: "jhsekjh", 
+         email: "kwsjlkj@gmail.com", 
+         department: "Testing", 
+         designation:"Senior Test Engineer",
+         id:103,
+         gender:"male"
+    },
+     {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:104,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:105,
+         gender:"male"
+    },
+    {
+         username: "Vishal", 
+         email: "vishal@gmail.com", 
+         department: "Marketing", 
+         designation:"Senior Specialist",
+         id:106, 
+         gender:"male"
+    }
+]
+  var user = users[0];
+  var tableHeaders = Object.keys(user);
+  console.log(tableHeaders);
+   var tableHeaderContent = ""; 
+     tableHeaders.forEach(function(key){
+          tableHeaderContent = tableHeaderContent + "<th>"+ key+"</th>"
+     })
+     console.log(tableHeaderContent);
+     document.getElementById("thead").innerHTML = tableHeaderContent
+    
+     var tableBodyContent= ""; 
+        users.forEach(function(user){
+                   var values =  Object.values(user);
+                   var trow = "<tr>" + convertValuesToRowItems(values)  +"</tr>";
+                   tableBodyContent = tableBodyContent + trow;
+        })
+        console.log(tableBodyContent);
+        document.getElementById("tbody").innerHTML = tableBodyContent;
+         function convertValuesToRowItems(values){
+            var finalContent = ""; 
+            values.forEach(function(value){
+                   finalContent = finalContent + "<td>"+ value + "</td>";
+            })
+            return finalContent;
+         }
+         </script>
+     </body>
+</html>
+

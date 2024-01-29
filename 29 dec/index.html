@@ -1,0 +1,80 @@
+<html>
+    <head>
+    </head>
+     <body>
+          <img src="3896.jpeg" width="630px" height="280px"> <br><br>
+          <input type="text" id="username" placeholder="enter username"> <br><br>
+        
+         <textarea rows="4" cols="50" id="comment" placeholder="add comment"></textarea>
+         &nbsp; &nbsp; &nbsp; &nbsp; <button onclick="addComment()">Add Comment</button> 
+          <hr>
+           <ul style="list-style-type: none;" id="list">
+                
+           </ul>
+         <script>
+                          var comments = [];
+                     function addComment(){
+                        var username = document.getElementById("username").value; 
+                        var comment = document.getElementById("comment").value; 
+                       
+                          var userComment = {
+                            username: username, 
+                            comment:comment, 
+                            commentId: generateUniqueId()
+                          }
+                          comments.push(userComment);
+                           console.log(comments);
+                           clearFields();
+                           showComments();
+                     }
+                    function showComments(){
+                        
+                             var index = 0; 
+                             var listItems = "";
+                             while(index < comments.length){
+                                    listItems = listItems +  "<li>" + "<b>"+comments[index].username+"</b> &nbsp;&nbsp;&nbsp; :" +"<span id='"+('c'+comments[index].commentId)+"' contenteditable='false'>"+comments[index].comment+"</span>"+ "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+ "<button onclick='deleteComment("+index+")'>Delete</button>"+ "&nbsp;&nbsp;"+ "<button id='"+comments[index].commentId+"' onclick='editComment("+comments[index].commentId+")'>Edit</button>"  +"</li> <br>"
+                                      index++;
+                             } 
+                             console.log(listItems);
+                             document.getElementById("list").innerHTML = listItems;
+                    }
+                    var counter = 0;
+                     function generateUniqueId(){
+                         counter++; 
+                         return counter;
+                     }
+                     function deleteComment(index){
+                           comments.splice(index,1); 
+                           showComments();
+                          
+                      }
+                      function clearFields(){
+                        document.getElementById("comment").value = ""; 
+                        document.getElementById("username").value = "";
+                      }
+                       function editComment(commentId){
+                    var targetBtn =  document.getElementById(commentId);
+                    targetBtn.innerText = "Update";
+                    targetBtn.setAttribute('onclick', "updateComment("+commentId+")");
+                    var span = document.getElementById("c"+commentId);
+                    console.log(span);
+                    span.contentEditable = true;
+                       }
+                        function updateComment(commentId){
+                          console.log("function called");
+                           var updatedComment = document.getElementById("c"+commentId).innerText;
+                           console.log("updatedComment", updatedComment);
+                              var index = 0;
+                            while(index < comments.length){
+                                 if(comments[index].commentId == commentId){
+                                      comments[index].comment = updatedComment;
+                                 }
+                                 index++;
+                            }
+                            document.getElementById("c"+commentId).contentEditable = false;
+                            showComments();
+                        }
+                  // DOM - Document Object Model - API (Objects and functions) - document
+         </script>
+     </body>
+</html>

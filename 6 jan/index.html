@@ -1,0 +1,60 @@
+class User {
+    constructor(userId, username) {
+        this.userId = userId;
+        this.username = username;
+        this.posts = [];
+    }
+
+    createPost(content) {
+        const post = new Post(this.userId, content);
+        this.posts.push(post);
+        return post;
+    }
+}
+
+class Post {
+    constructor(userId, content) {
+        this.postId = generateId();
+        this.userId = userId;
+        this.content = content;
+        this.comments = [];
+        this.creationTime = new Date();
+    }
+
+    addComment(userId, content) {
+        const comment = new Comment(userId, content);
+        this.comments.push(comment);
+        return comment;
+    }
+}
+
+class Comment {
+    constructor(userId, content) {
+        this.commentId = generateId();
+        this.userId = userId;
+        this.content = content;
+        this.creationTime = new Date();
+    }
+}
+
+function generateId() {
+    // In a real-world scenario, use a more sophisticated method to generate IDs
+    return new Date().getTime();
+}
+
+// Example usage
+const user1 = new User(1, "user123");
+const user2 = new User(2, "user456");
+
+const post1 = user1.createPost("This is my first post!");
+const comment1 = post1.addComment(user2.userId, "Great post!");
+
+console.log(`${user1.username}'s posts:`);
+for (const post of user1.posts) {
+    console.log(`Post ID: ${post.postId}, Content: ${post.content}, Created at: ${post.creationTime}`);
+}
+
+console.log(`\nComments on ${user1.username}'s post:`);
+for (const comment of post1.comments) {
+    console.log(`Comment ID: ${comment.commentId}, Content: ${comment.content}, Created at: ${comment.creationTime}`);
+}
