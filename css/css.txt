@@ -1,0 +1,725 @@
+CSS:  Cascading Style Sheets
+CSS Selectors: 
+We can categorize CSS Selectors into 2 types. 
+
+1. Basic Selectors : element, class, id
+
+element selector: 
+   syntax:element_name{
+     property: value; 
+     property: value;
+  }
+<html>
+    <head>
+         <style>
+               h1,p{
+                text-align: center;
+                color:red; 
+                font-family: cursive;
+               }
+               h3{
+                text-align: center;
+                color:green;
+               }
+               /* p{
+                text-align: center;
+                color:red; 
+                font-family: cursive;
+               } */
+         </style>
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+          <h3>Hitech City, Opp to Cyber Towers.</h3>
+          <p style="color:orange">This is some paragraph!</p>
+     </body>
+</html>
+another example:
+<html>
+    <head>
+         <style>
+               h1,p{
+                text-align: center;
+                color:red; 
+                font-family: cursive;
+               }
+               h3{
+                text-align: center;
+                color:green;
+               }
+               /* p{
+                text-align: center;
+                color:red; 
+                font-family: cursive;
+               } */
+               *{
+                   font-size: 40px;
+               }
+         </style>
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+          <h3>Hitech City, Opp to Cyber Towers.</h3>
+          <p style="color:orange;">This is some paragraph!</p>
+     </body>
+</html>
+
+class selector: 
+if we want to define some css irrespective of any html element, then we can use 
+classes. 
+syntax: 
+    .classname{
+         property: value
+    }
+    <html>
+    <head>
+         <style>
+ 
+                  .theme1{
+                       color:white;
+                       background-color: grey;
+                       font-family: cursive;
+                  }
+                  .theme2{
+                       color:grey;
+                       background-color: wheat;
+                       font-family: 'Times New Roman', Times, serif;
+                  }
+                  .theme3{
+                       color:whitesmoke;
+                       background-color: teal;
+                       font-family: Arial, Helvetica, sans-serif
+                  }
+              
+         </style>
+    </head>
+     <body class="theme1">
+          <h1>Digital Lync Technologies</h1>
+          <h3>Hitech City, Opp to Cyber Towers.</h3>
+          <p>This is some paragraph!</p>
+     </body>
+</html>
+
+id selector: 
+syntax: 
+#id{
+     property: value
+}
+<html>
+    <head>
+         <style>
+ 
+               #header{
+                    text-align: center;
+               }
+              
+         </style>
+    </head>
+     <body>
+          <h1 id="header">Digital Lync Technologies</h1>
+          <h3>Hitech City, Opp to Cyber Towers.</h3>
+          <p>This is some paragraph!</p>
+     </body>
+</html>
+Note: we can combine all the selectors and provide css configuration. 
+ #id,.classname, element_name{
+    property: value
+ }
+ Problem Statement: 
+ Apply element selector for h1 
+ Apply class selector for h2 
+ Apply id selector for h3 
+ 
+2. Advanced Selectors : combinators, psuedo classes and elements
+Inserting CSS into HTML(Inline, Internal,External): 
+We can insert css in 3 ways.
+
+1. inline :  to a specific element , we use style attribute for inline css. 
+2. internal: to a set of elements in a file, we use <style> tag for internal css.
+
+<html>
+    <head>
+          <!--Internal-->
+         <style>
+                       h2{
+                        text-align: center;
+                        font-family: cursive;
+                        color:red
+                       }
+         </style>
+       
+    </head>
+     <body>
+         
+        <!-- Inline css-->
+           <h1 style="text-align: center;">Hello</h1>
+           <h2>Header h2</h2>
+           <h2>Header h2.1</h2>
+           <h2>Header h2.2</h2>
+     </body>
+</html>
+
+3. external: to a set of files in an application, we create a style.css (any file name)
+and link it into the files wherever needed.
+page1.html: 
+<html>
+    <head>
+           <link rel="stylesheet" href="style.css">
+    </head>
+     <body>
+            <h1 >Digital Lync Technologies</h1>
+ 
+             <a href="page1.html">Page 1</a>
+             <a href="page2.html">Page 2</a>
+             <a href="page3.html">Page 3</a>
+            <h3>Page 1</h3>
+     </body>
+</html>
+page2.html: 
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     <body>
+            <h1>Digital Lync Technologies</h1>
+            <a href="page1.html">Page 1</a>
+            <a href="page2.html">Page 2</a>
+            <a href="page3.html">Page 3</a>
+            <h3>Page 2</h3>
+     </body>
+</html> 
+page3.html: 
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+     <body>
+            <h1>Digital Lync Technologies</h1>
+            <a href="page1.html">Page 1</a>
+            <a href="page2.html">Page 2</a>
+            <a href="page3.html">Page 3</a>
+            <h3>Page 3</h3>
+     </body>
+</html>
+style.css:
+h1{
+    text-align: center;
+    color:green;
+    font-family: cursive;
+}
+
+
+
+Colors: 
+CSS provides color property to provide color to html element. 
+<html>
+    <head>
+         <style>
+             h1{
+                  /* color:rgba(29, 203, 153,0.3); */
+                  color:#006666;
+                  text-align: center;
+             }
+         </style>
+         
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+     </body>
+</html>
+
+Background: 
+background-color:
+<html>
+    <head>
+         <style>
+             h1{
+                  /* color:rgba(29, 203, 153,0.3); */
+                  color:#006666;
+                  text-align: center;
+                  background-color: black;
+             }
+         </style>
+         
+    </head>
+     <body>
+          <h1>Digital Lync Technologies</h1>
+     </body>
+</html>
+
+background image:
+<html>
+    <head>
+         <style>
+                  body{
+                    background-image: url("bgimage.png");
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                  }
+           
+         </style>
+         
+    </head>
+     <body>
+         <h1 style="color:rgb(249, 212, 4); margin-left:420px">Wedding Invitation</h1>
+          <h2 style="color:whitesmoke; margin-left: 321px;">Someone is invition someone on someone's wedding</h2>
+     </body>
+</html>
+<html>
+    <head>
+         <style>
+                  body{
+                    /* background-image: url("fp.png"); */
+                    /* background-repeat: no-repeat; */
+                    /* background-size: 261px 281px; */
+                    /* background-position: top right; */
+                    /* background-attachment: fixed; */
+                    background:  url("fp.png") no-repeat  top right fixed;
+                    background-size: 261px 281px;
+                    
+                  }
+           
+         </style>
+         
+    </head>
+     <body>
+         
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <h1>Helllo</h1>
+         <
+       
+     </body>
+</html>
+
+Task: Create a web page for a university.
+1. have a background image to show the university
+2. In the center of the bg image, create a login form aligned properly.
+
+
+Border / margin/padding: 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+     </body>
+</html> 
+
+
+1.Outline: 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+     </body>
+</html>
+
+2.Fonts: 
+Its really important to choose a right font and font families based on type of web page we are building. 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                 font-family: cursive;
+                 font-size: 25px;
+                
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+     </body>
+</html>
+
+3.HTML Links-CSS: 
+<html>
+    <head>
+        <style>
+            h1{
+                 /* border-style: solid;
+                 border-width: 5px;
+                 border-color: red; */
+                 /* border: solid 5px red; */
+                 /* border-left-style: solid;
+                 border-left-color: red;
+                 border-left-width: 10px; */
+                 border-left: solid red 10px;
+                 border-right: solid red 10px;
+                 border-top: solid green 2px;
+                 border-bottom: solid green 2px;
+                 border-radius: 20px;
+                 /* margin-left: 180px;
+                 margin-right: 250px;
+                 margin-top:287px;
+                 margin-bottom: 40px; */
+                 margin: 287px 240px 40px 180px;
+                 /* margin:300px; */
+                 /* margin: 200px 10px */
+                 /* padding-top:  10px;
+                 padding-bottom: 10px;
+                 padding-left:10px;
+                 padding-right: 10px; */
+                 padding: 10px;
+                 outline: 2px solid  yellow;
+                 /* outline-offset: 12px; */
+                 font-family: cursive;
+                 font-size: 25px;
+            }
+            a{
+                text-decoration: underline;
+                text-decoration-color: brown;
+            }
+            a:link{
+                color:green
+            }
+            a:hover{
+                color:red
+            }
+        </style>
+    </head>
+     <body>
+ 
+         <a href="index.html">Home</a>
+         <a href="login.html">Login</a>
+         <a href="read.html">Terms and Conditions</a>
+         <h1>A scheduled outage is planned on 9-12-2023 between 7 AM IST and 8 AM IST</h1>
+         <!-- <h2>Some content</h2> -->
+          
+          
+     </body>
+</html>
+
+4.HTML Lists - CSS: 
+<html>
+    <head>
+        <style>
+             ul{
+                list-style-image: url(l.jpg);
+             }
+        </style>
+    </head>
+     <body>
+ 
+            <ul>
+                  <li>Item 1</li>
+                  <li>Item 2</li>
+                  <li>Item 3</li>
+                  <li>Item 4</li>
+                  <li>Item 5</li>
+            </ul>   
+          
+     </body>
+</html>
+
+Tables: 
+https://www.w3schools.com/css/css_table.asp::: link in Tables
+
+5.Combinators: 
+We have 4 Combinators.
+1.descendantselecor
+2.child selecctor
+3.adjacent selector
+4.general selector
+
+descendant selector (space): 
+ <html>
+    <head>
+         <style>
+                  div p{
+                    color:red
+                   }
+         </style>
+    </head>
+     <body>
+           <p> This is paragraph 1</p>
+           <p> This is paragraph 2</p>
+             <div>
+                 <p>This is paragraph 3</p>
+                 <p>This is paragraph 4</p>
+             </div>
+     </body>
+ </html>
+
+child selector (>) : 
+ <html>
+    <head>
+         <style>
+                  div > p{
+                    color:red
+                   }
+         </style>
+    </head>
+     <body>
+           <p> This is paragraph 1</p>
+           <p> This is paragraph 2</p>
+             <div>
+                 <p>This is paragraph 3</p>
+                 <p>This is paragraph 4</p>
+                  <section>
+                                   <p>This is paragraph 5</p>
+                                   <p>This is paragraph 6</p>
+                  </section>
+             </div>
+     </body>
+ </html>
+
+adjacent sibling selector (+): 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div + p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<h2>Adjacent Sibling Selector</h2>
+<p>The + selector is used to select an element that is directly after another specific element.</p>
+<p>The following example selects the first p element that are placed immediately after div elements:</p>
+<div>
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+</div>
+<p>Paragraph 3. After a div.</p>
+<p>Paragraph 4. After a div.</p>
+<div>
+  <p>Paragraph 5 in the div.</p>
+  <p>Paragraph 6 in the div.</p>
+</div>
+<p>Paragraph 7. After a div.</p>
+<p>Paragraph 8. After a div.</p>
+</body>
+</html>
+
+general sibling selector (~):
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div ~ p {
+  background-color: yellow;
+}
+</style>
+</head>
+<body>
+<h2>Adjacent Sibling Selector</h2>
+<p>The + selector is used to select an element that is directly after another specific element.</p>
+<p>The following example selects the first p element that are placed immediately after div elements:</p>
+<div>
+  <p>Paragraph 1 in the div.</p>
+  <p>Paragraph 2 in the div.</p>
+</div>
+<p>Paragraph 3. After a div.</p>
+<p>Paragraph 4. After a div.</p>
+<div>
+  <p>Paragraph 5 in the div.</p>
+  <p>Paragraph 6 in the div.</p>
+</div>
+<p>Paragraph 7. After a div.</p>
+<p>Paragraph 8. After a div.</p>
+</body>
+</html>
+
